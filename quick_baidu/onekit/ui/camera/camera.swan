@@ -1,3 +1,4 @@
+
 <camera
 class="onekit-camera {{Class}}"
 style="{{Style}}"
@@ -7,5 +8,5 @@ flash="{{flash}}"
 binderror="camera_error"
 >
 
-
+<slot/>
 </camera>

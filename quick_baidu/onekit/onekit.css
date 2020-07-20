@@ -21,10 +21,12 @@ page>.onekit_div{ /* page>div */
     box-sizing: border-box;
     display: -webkit-box;
     display: -webkit-flex;
-    display: flex;
-    flex: 0 1 auto;
+    display: flex; 
+    flex: 0 1 auto; 
+    justify-content: center;
     z-index: 0;
     max-width: 100%;
+  
 }
 .onekit_div {
     pointer-events: none;
@@ -517,9 +519,12 @@ onekit-tab-bar {
 .onekit_camera {
     pointer-events: none;
     overflow: hidden;
+    
 }
 .onekit_camera {
     min-height: 100%;
+    display: flex;
+    justify-content:center;
 }
 /* .onekit_canvas */
 .onekit_canvas {

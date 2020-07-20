@@ -1,7 +1,9 @@
 {
     "navigationBarTitleText": "camera",
     "usingComponents": {
-        "onekit-camera": "/onekit/ui/camera/camera"
+        "onekit-camera": "/onekit/ui/camera/camera",
+        "onekit-div": "/onekit/ui/div/div",
+        "onekit-text": "/onekit/ui/text/text"
     }
 
 }

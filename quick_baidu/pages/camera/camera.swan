@@ -5,7 +5,7 @@
     </onekit-div>
 
     <onekit-div Class="container">
-      <onekit-camera id="camera" Class="camera" deviceposition="{{deviceposition}}" flash="{{flash}}" onerror="handlerError"></onekit-camera>
+      <onekit-camera id="camera" Class="camera" deviceposition="{{deviceposition}}" flash="{{flash}}" binderror="handlerError"></onekit-camera>
 
       <input type="button" value="拍照" Class="btn" onclick="takePhoto"></input>
 

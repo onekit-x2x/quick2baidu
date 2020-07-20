@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/video/video",
         "pages/camera/camera",
+        "pages/video/video",
         "pages/geolocation/geolocation",
         "pages/zip/zip",
         "pages/vibrator/vibrator",
