@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "camera",
+    "usingComponents": {
+        "onekit-camera": "/onekit/ui/camera/camera"
+    }
+
+}

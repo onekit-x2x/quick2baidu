@@ -1,0 +1,3 @@
+<view bindtap="view_tap">
+<slot></slot>
+</view>

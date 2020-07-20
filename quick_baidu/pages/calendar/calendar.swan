@@ -1,0 +1,10 @@
+<view>
+    <!-- <text>事件的标题<text>
+    <input class="item-input" type="text" value="{{title}}" placeholder="标题" onchange="updateData('title')"></input>
+    <text>事件的描述<text>
+    <input class="item-input" type="text" value="{{description}}" placeholder="描述" onchange="updateData('description')"></input>
+    <text>事件的开始时间<text>
+    <input class="item-input" type="number" value="{{startDate}}" placeholder="从公元纪年开始的毫秒数" onchange="updateData                ('startDate')"></input>
+    <text>事件的结束事件<text>
+    <input class="item-input" type="number" value="{{endDate}}" placeholder="从公元纪年开始的毫秒数" onchange="updateData   text            ('endDate')"></input> -->
+</view>

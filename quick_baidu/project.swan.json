@@ -1,0 +1,38 @@
+{
+    "appid": "17211727",
+    "compilation-args": {
+        "common": {
+            "enhance": true
+        },
+        "options": [],
+        "selected": -1
+    },
+    "editor": {
+        "curPath": "/Users/zhangjin/SVN/112.74.84.131/quick_baidu/trunk/quick_baidu/project.swan.json",
+        "expands": [],
+        "markdownUploadTimeMap": {},
+        "paths": [
+            "/Users/zhangjin/SVN/112.74.84.131/quick_baidu/trunk/quick_baidu/app.json",
+            "/Users/zhangjin/SVN/112.74.84.131/quick_baidu/trunk/quick_baidu/project.swan.json"
+        ],
+        "recentlyFiles": [
+            "/Users/zhangjin/SVN/112.74.84.131/quick_baidu/trunk/quick_baidu/project.swan.json",
+            "/Users/zhangjin/SVN/112.74.84.131/quick_baidu/trunk/quick_baidu/pkginfo.json",
+            "/Users/zhangjin/SVN/112.74.84.131/quick_baidu/trunk/quick_baidu/app.json"
+        ]
+    },
+    "host": "baiduboxapp",
+    "preview": {
+        "packageId": 495801
+    },
+    "projectname": "quick_baidu",
+    "setting": {
+        "urlCheck": false
+    },
+    "swan": {
+        "baiduboxapp": {
+            "swanJsVersion": "3.180.7",
+            "extensionJsVersion": "1.13.1"
+        }
+    }
+}
