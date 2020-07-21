@@ -1,4 +1,4 @@
-@import '/common/css/common.wxss';
+@import '/common/css/common.css';
 
 .item {
   flex-direction: column;

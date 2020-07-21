@@ -1,11 +1,9 @@
 import router from "../../../onekit/api/system/router"
 Component({
   options: {
-    styleIsolation: 'apply-shared'
-  },
+        addGlobalClass: true,
+    },
   properties: {
-    Style:String,
-    Class:String,
     href:{
       type:String,
       value:''

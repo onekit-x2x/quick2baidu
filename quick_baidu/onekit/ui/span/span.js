@@ -1,24 +1,24 @@
 // onekit/ui/span/span.js
 Component({
-  options: {
-    styleIsolation: 'apply-shared'
-  },
-  properties: {
-    Class:String,
-    Style:String
-  },
+    options: {
+        addGlobalClass: true,
+    },
+    properties: {
+        Class: String,
+        Style: String
+    },
 
-  /**
-   * 组件的初始数据
-   */
-  data: {
+    /**
+     * 组件的初始数据
+     */
+    data: {
 
-  },
+    },
 
-  /**
-   * 组件的方法列表
-   */
-  methods: {
+    /**
+     * 组件的方法列表
+     */
+    methods: {
 
-  }
+    }
 })

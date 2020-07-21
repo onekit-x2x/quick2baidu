@@ -1,15 +1,15 @@
 // onekit/ui/popup/popup.js
 Component({
     options: {
-        styleIsolation: 'apply-shared'
-      },
+        addGlobalClass: true,
+    },
     /**
      * 组件的属性列表
      */
     properties: {
-      Class:String,
-      Style:String,
-      target:String,
+        Class: String,
+        Style: String,
+        target: String,
 
     },
 
