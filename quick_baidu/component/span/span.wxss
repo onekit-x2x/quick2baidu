@@ -1,0 +1,12 @@
+@import '/common/css/common.wxss';
+.item-container{
+  margin-bottom: 50px;
+  margin-right: 60px;
+  margin-left: 60px;
+  flex-direction: column;
+}
+.item-title {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  color: #aaaaaa;
+}
