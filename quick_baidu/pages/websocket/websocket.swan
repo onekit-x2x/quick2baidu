@@ -1,5 +1,5 @@
 <view class="container">
-    <text>pages/websocket/websocket.wxml</text>
+    <text>pages/websocket/websocket.swan</text>
 <button bindtap="create1">websocket1创建连接</button>
 <button bindtap="send1">websocket1发送消息</button>
 <button bindtap="close1">websocket1关闭连接</button>

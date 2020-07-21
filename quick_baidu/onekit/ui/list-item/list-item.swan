@@ -1,4 +1,4 @@
-<!--components/recycle-item/recycle-item.wxml-->
+<!--components/recycle-item/recycle-item.swan-->
 <view class="onekit-list-item {{Class}}" style="{{Style}}">
   <slot></slot>
 </view>

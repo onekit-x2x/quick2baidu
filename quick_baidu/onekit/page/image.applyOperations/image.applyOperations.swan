@@ -1,4 +1,4 @@
-<!--utils/image-applyOperations/image-applyOperations.wxml-->
+<!--utils/image-applyOperations/image-applyOperations.swan-->
 <canvas 
 type = "2d"
 id = "myCanvas"
