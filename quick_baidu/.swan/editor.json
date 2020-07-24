@@ -1,9 +1,13 @@
 {
     "editor": {
         "curPath": "",
-        "expands": [],
+        "expands": [
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\common"
+        ],
         "markdownUploadTimeMap": {},
-        "paths": [],
+        "paths": [
+            "search"
+        ],
         "recentlyFiles": []
     }
 }
