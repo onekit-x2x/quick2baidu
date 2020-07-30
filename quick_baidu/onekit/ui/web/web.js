@@ -1,6 +1,8 @@
 Component({
-    properties: {        Class:{type:String,value:""},     Style:{type:String,value:""},
+    properties: {        
     src:{type:String,value:""},
+    Class:{type:String,value:""},  
+    Style:{type:String,value:""},
     Id:{type:String,value:""},
     },
 

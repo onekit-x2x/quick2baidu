@@ -112,8 +112,7 @@ Component({
       type:String,
       value:""
     },
-    Style:String,
-    Class:String
+  
   },
 
   /**

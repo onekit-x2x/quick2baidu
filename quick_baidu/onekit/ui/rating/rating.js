@@ -4,8 +4,8 @@ Component({
         addGlobalClass: true,
     },
     properties: {        Id:{type:String,value:""},    
-        Style: String,
-        Class: String,
+        Style: {type:String,value:""},
+        Class:{type:String,value:""},
         numstars: {
             type: Number,
             value: 5

@@ -3,9 +3,9 @@ Component({
     options: {
         addGlobalClass: true,
     },
-    properties: {        Id:{type:String,value:""}, 
-        Style: String,
-        Class: String,
+    properties: {        Class:{type:String,value:""},  
+    Style:{type:String,value:""},
+    Id:{type:String,value:""},
         percent: {
             type: Number,
         }

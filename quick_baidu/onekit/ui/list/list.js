@@ -205,8 +205,7 @@ Component({
     addGlobalClass: true,
   },
   properties: {        Id:{type:String,value:""},     Class:{type:String,value:""},     Style:{type:String,value:""},
-    Style:String,
-    Class:String,
+
     scrollpage:{
       type:Boolean,
       value:false
