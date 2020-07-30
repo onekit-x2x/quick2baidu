@@ -1,13 +1,53 @@
 {
     "editor": {
-        "curPath": "",
+        "curPath": "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\camera\\camera.swan",
         "expands": [
-            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\common"
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\pages",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\popup",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\page\\image.editImage",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\image",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\list",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\list-item",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\marquee",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\progress",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\rating",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\refresh",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\span",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\swiper",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\text",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\video",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\web",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\page",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\page\\image.editImage\\image-cropper",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\camera"
         ],
         "markdownUploadTimeMap": {},
         "paths": [
-            "search"
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\camera\\camera.swan"
         ],
-        "recentlyFiles": []
+        "recentlyFiles": [
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\camera\\camera.swan",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\camera\\camera.js",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\canvas\\canvas.swan",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\canvas\\canvas.js",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\progress\\progress.js",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\web\\web.js",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\rating\\rating.js",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\span\\span.js",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\video\\video.js",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\video\\video.json",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\pages\\video\\video.js",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\pages\\vibrator\\vibrator.css",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\app.json",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\marquee\\marquee.js",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\list\\list.js",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\list-item\\list-item.js",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\popup\\popup.swan",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\popup\\popup.js",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\ui\\refresh\\refresh.js",
+            "D:\\GIT\\github.com\\quick2baidu\\quick_baidu\\onekit\\page\\image.editImage\\image-cropper\\image-cropper.js"
+        ]
     }
 }
