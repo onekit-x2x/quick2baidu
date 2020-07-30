@@ -3,7 +3,7 @@ Component({
     options: {
         addGlobalClass: true,
     },
-    properties: {
+    properties: {        Id:{type:String,value:""},    
         Style: String,
         Class: String,
         numstars: {

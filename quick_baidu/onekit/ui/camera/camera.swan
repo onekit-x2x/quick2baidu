@@ -1,7 +1,7 @@
 
 <camera
 class="onekit-camera {{Class}}"
-style="{{Style}}"
+style="{{Style}}"  id="{{Id}}"
 device-position="{{deviceposition}}"
 flash="{{flash}}"
 

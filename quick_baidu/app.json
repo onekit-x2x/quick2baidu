@@ -1,7 +1,8 @@
 {
     "pages": [
-        "pages/camera/camera",
+        "pages/image/image",
         "pages/video/video",
+        "pages/camera/camera",
         "pages/geolocation/geolocation",
         "pages/zip/zip",
         "pages/vibrator/vibrator",
@@ -11,7 +12,6 @@
         "pages/request/request",
         "pages/network/network",
         "pages/media/media",
-        "pages/image/image",
         "pages/record/record",
         "pages/audio/audio",
         "pages/file/file",

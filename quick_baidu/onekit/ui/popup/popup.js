@@ -6,7 +6,7 @@ Component({
     /**
      * 组件的属性列表
      */
-    properties: {
+    properties: {        Id:{type:String,value:""},
         Class: String,
         Style: String,
         target: String,
