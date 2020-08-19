@@ -1,6 +1,6 @@
 <swiper
-class="onekit-swiper {{Class}}"
-style="{{Style}}"  id="{{Id}}"
+class="onekit-swiper {{onekitClass}}"
+style="{{onekitStyle}}"  id="{{Id}}"
 current="{{index}}"
 autoplay="{{autoplay}}"
 interval="{{interval}}"

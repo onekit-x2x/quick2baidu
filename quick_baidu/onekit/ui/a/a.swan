@@ -1,6 +1,6 @@
 <view
-class="onekit-a {{Class}}"
-style="{{Style}}"  id="{{Id}}"
+class="onekit-a {{onekitClass}}"
+style="{{onekitStyle}}"  id="{{Id}}"
 href="{{href}}"
 bindtap="a_bindtap"
 >

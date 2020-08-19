@@ -1,6 +1,6 @@
 <view
-class="onekit-refresh {{Class}}"
-style="{{Style}} "
+class="onekit-refresh {{onekitClass}}"
+style="{{onekitStyle}} "
 disabled="{{disabled}}"
 aria-label=""
 aria-unfocusable="{{}}"

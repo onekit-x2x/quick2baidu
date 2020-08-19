@@ -5,7 +5,7 @@ Component({
     },
     properties: {        Id:{type:String,value:""},    
         Style: {type:String,value:""},
-        Class:{type:String,value:""},
+        onekitClass:{type:String,value:""},
         numstars: {
             type: Number,
             value: 5

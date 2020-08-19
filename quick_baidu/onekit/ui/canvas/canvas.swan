@@ -1,6 +1,6 @@
 <canvas
-class="onekit-canvas {{Class}}"
-style="display:block !important;{{Style}}"
+class="onekit-canvas {{onekitClass}}"
+style="display:block !important;{{onekitStyle}}"
 id="{{Id}}"
 height="{{height}}"
 width="{{width}}"
