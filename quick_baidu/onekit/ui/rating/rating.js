@@ -3,8 +3,8 @@ Component({
     options: {
         addGlobalClass: true,
     },
-    properties: {        Id:{type:String,value:""},    
-        Style: {type:String,value:""},
+    properties: {        onekitId:{type:String,value:""},    
+        onekitStyle: {type:String,value:""},
         onekitClass:{type:String,value:""},
         numstars: {
             type: Number,

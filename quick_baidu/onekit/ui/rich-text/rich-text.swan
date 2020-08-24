@@ -1,6 +1,6 @@
 <rich-text
 class="onekit-rich-text {{onekitClass}}"
-style="{{onekitStyle}}"  id="{{Id}}"
+style="{{onekitStyle}}"  id="{{onekitId}}"
 nodes="{{nodes}}"
 >
 <slot>
