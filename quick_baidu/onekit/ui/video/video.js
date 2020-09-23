@@ -35,27 +35,27 @@ options: {
 methods:{
         video_start(e) {
             console.log("video_start", e);
-            this.triggerEvent('play',e.details)
+            this.triggerEvent('play')
         },
         video_pause(e) {
             console.log("video_pause", e);
-            this.triggerEvent('pause',e.details)
+            this.triggerEvent('pause')
         },
         video_finish(e) {
             console.log("video_finish", e);
-            this.triggerEvent('ended',e.details)
+            this.triggerEvent('ended')
         },
         video_timeupdate(e) {
             console.log("video_timeupdate", e);
-            this.triggerEvent('timeupdate',e.details)
+            this.triggerEvent('timeupdate')
         },
         video_fullscreenchange(e) {
             console.log("video_fullscreenchange", e);
-            this.triggerEvent('fullscreenchange',e.details)
+            this.triggerEvent('fullscreenchange')
         },
         video_error(e) {
             console.log("video_error", e);
-            this.triggerEvent('error',e.details)
+            this.triggerEvent('error')
         }
     }
    

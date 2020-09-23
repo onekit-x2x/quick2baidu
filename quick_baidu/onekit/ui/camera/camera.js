@@ -18,7 +18,7 @@ options: {
       
        camera_error(e){
         console.log("camera_error", e);
-        this.triggerEvent('error',e.details)
+        this.triggerEvent('error')
        },
     }
 });
