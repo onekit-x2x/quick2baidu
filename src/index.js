@@ -33,7 +33,7 @@ import system_media from './@system.media'
 import system_image from './@system.image'
 import system_audio from './@system.audio'
 import hap_io_Video from './api/Video'
-import service_texttoaudio from './@service.texttoaudio'
+
 
 export default {
   OnekitApp,
@@ -66,5 +66,5 @@ export default {
   '@system.image': system_image,
   '@system.audio': system_audio,
   '@hap.io.Video': hap_io_Video,
-  '@service.texttoaudio': service_texttoaudio,
+
 }

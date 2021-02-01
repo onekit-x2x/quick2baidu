@@ -4,9 +4,9 @@
 
 module.exports = {
   getLocale() {
-    const wx_res = swan.getSystemInfoSync()
+    const swan_res = swan.getSystemInfoSync()
     const quick_res = {
-      language: wx_res.language,
+      language: swan_res.language,
       countryOrRegion: 'CN'
     }
     return quick_res
@@ -15,8 +15,8 @@ module.exports = {
 
   },
   getThemeMode() {
-    const wx_res = swan.getSystemInfoSync()
-    if (wx_res.theme === 'light') {
+    const swan_res = swan.getSystemInfoSync()
+    if (swan_res.theme === 'light') {
       return 0
     } else {
       return 1

@@ -14,13 +14,13 @@ module.exports = {
     PROMISE((SUCCESS) => {
       swan.getImageInfo({
         src: quick_uri,
-        success: wx_res => {
+        success: swan_res => {
           const quick_res = {
-            uri: wx_res.path,
-            width: wx_res.width,
-            height: wx_res.height,
-            orientation: wx_res.orientation,
-            type: wx_res.type,
+            uri: swan_res.path,
+            width: swan_res.width,
+            height: swan_res.height,
+            orientation: swan_res.orientation,
+            type: swan_res.type,
           }
           SUCCESS(quick_res)
         }
@@ -39,9 +39,9 @@ module.exports = {
       swan.compressImage({
         src: quick_uri,
         quality: quick_quality,
-        success: wx_res => {
+        success: swan_res => {
           const quick_res = {
-            uri: wx_res.tempFilePath
+            uri: swan_res.tempFilePath
           }
           SUCCESS(quick_res)
         }

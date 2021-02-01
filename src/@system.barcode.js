@@ -15,13 +15,13 @@ module.exports = {
     quick_object = null
     PROMISE((SUCCESS) => {
       swan.scanCode({
-        success: wx_res => {
+        success: swan_res => {
           const quick_res = {
-            result: wx_res.result,
-            scanType: wx_res.scanType,
-            charSet: wx_res.charSet,
-            path: wx_res.path,
-            rawData: wx_res.rawData,
+            result: swan_res.result,
+            scanType: swan_res.scanType,
+            charSet: swan_res.charSet,
+            path: swan_res.path,
+            rawData: swan_res.rawData,
           }
           SUCCESS(quick_res)
         }

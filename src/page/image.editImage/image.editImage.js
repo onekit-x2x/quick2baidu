@@ -18,24 +18,24 @@ Page({
     //   this.cropper.upload(options.src);//上传图片
     // }
 
-    var wx_params = JSON.parse(options.wx_params);
-    for (var wx_params_key of Object.keys(wx_params)) {
-      var wx_params_value = wx_params[wx_params_key];
-      switch (wx_params_key) {
+    var swan_params = JSON.parse(options.swan_params);
+    for (var swan_params_key of Object.keys(swan_params)) {
+      var swan_params_value = swan_params[swan_params_key];
+      switch (swan_params_key) {
         case "uri":
-          this.cropper.upload(wx_params_value); //上传图片
+          this.cropper.upload(swan_params_value); //上传图片
           break;
         case "aspectRatioX":
-          if (wx_params_value > 0) {
+          if (swan_params_value > 0) {
             this.setData({
-              width: wx_params_value * 10
+              width: swan_params_value * 10
             });
           }
           break;
         case "aspectRatioY":
-          if (wx_params_value > 0) {
+          if (swan_params_value > 0) {
             this.setData({
-              height: wx_params_value * 10
+              height: swan_params_value * 10
             });
           }
 

@@ -12,34 +12,34 @@ module.exports = {
     const quick_fail = quick_object.fail
     const quick_complete = quick_object.complete
     // ////////////////////////////////////////////
-    const wx_object = {}
+    const swan_object = {}
     if (quick_type.indexOf('text/') === 0) {
-      console.log('[quick2weixin] not support share text')
+      console.log('[quick2baidu] not support share text')
     } else if (quick_type.indexOf('/') === 0) {
       // 应用内路径
-      wx_object.path = quick_data
+      swan_object.path = quick_data
     } else {
       // 下载的文件路径
 
     }
 
-    const wx_callback = {}
+    const swan_callback = {}
     if (quick_complete) {
-      wx_callback.complete = quick_complete
+      swan_callback.complete = quick_complete
     }
     if (quick_success) {
-      wx_callback.success = quick_success
+      swan_callback.success = quick_success
     }
     if (quick_fail) {
-      wx_callback.fail = quick_fail
+      swan_callback.fail = quick_fail
     }
     if (quick_object.cancel) {
-      wx_callback.cancel = quick_object.cancel
+      swan_callback.cancel = quick_object.cancel
     }
 
     swan.navigateTo({
-      url: `/onekit/page/share.share/share.share?param=${JSON.stringify(wx_object)}`,
-      events: wx_callback,
+      url: `/onekit/page/share.share/share.share?param=${JSON.stringify(swan_object)}`,
+      events: swan_callback,
     })
   }
 

@@ -33,24 +33,24 @@ module.exports = {
     //     }
     //   })
     // }, quick_success, quick_fail)
-    const wx_object = {
+    const swan_object = {
 
     }
-    wx_object.timeStamp = quick_extra.timeStamp
-    wx_object.nonceStr = quick_extra.nonceStr
-    wx_object.package = quick_extra.package
-    wx_object.paySign = quick_extra.paySign
+    swan_object.timeStamp = quick_extra.timeStamp
+    swan_object.nonceStr = quick_extra.nonceStr
+    swan_object.package = quick_extra.package
+    swan_object.paySign = quick_extra.paySign
 
-    wx_object.success = function (res) {
+    swan_object.success = function (res) {
       console.log('swan-pay-success', res)
       if (quick_success) {
         quick_success({
-          prepayid: wx_object.prepayid
+          prepayid: swan_object.prepayid
         })
       }
     }
 
-    wx_object.fail = function (res) {
+    swan_object.fail = function (res) {
       console.log('swan-pay-fail', res)
 
       if (res.errMsg.indexOf('cancel') > -1 && quick_cancel) {
@@ -62,8 +62,8 @@ module.exports = {
       }
     }
 
-    console.log('支付参数', wx_object)
-    swan.requestPayment(wx_object)
+    console.log('支付参数', swan_object)
+    swan.requestPayment(swan_object)
   }
 
 

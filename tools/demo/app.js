@@ -1,13 +1,17 @@
-import {OnekitApp} from './weixin2baidu/index';
-import {swan} from './weixin2baidu/index';
+import {
+  OnekitApp
+} from './quickapp2baidu/index';
+import {
+  swan
+} from './quickapp2baidu/index';
 OnekitApp({
-    onLaunch:function(){
-        console.log('App Launch');
-    },
-    onShow:function(){
-        console.log('App Show');
-    },
-    onHide:function(){
-        console.log('App Hide');
-    }
+  onLaunch: function () {
+    console.log('App Launch');
+  },
+  onShow: function () {
+    console.log('App Show');
+  },
+  onHide: function () {
+    console.log('App Hide');
+  }
 });

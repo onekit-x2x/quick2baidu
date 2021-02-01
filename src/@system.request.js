@@ -28,10 +28,10 @@ module.exports = {
           filePath,
           header: quick_header,
           formData: quick_data[0],
-          success: wx_res => {
+          success: swan_res => {
             const quick_res = {
-              code: wx_res.statusCode,
-              data: wx_res.data
+              code: swan_res.statusCode,
+              data: swan_res.data
             }
             callback(quick_res)
           }
@@ -58,7 +58,7 @@ module.exports = {
     const filename = quick_object.filename || quick_url.substring(quick_url.lastIndexOf('/') + 1)
     const filePath = swan.env.USER_DATA_PATH + '/' + filename
     quick_object = null
-    const wx_object = {
+    const swan_object = {
       url: quick_url,
       filePath,
     }
@@ -66,20 +66,20 @@ module.exports = {
       swan.downloadFile({
         url: quick_url,
         filePath,
-        success: wx_res => {
+        success: swan_res => {
           const token = '' + new Date().getTime()
           const quick_res = {
-            tempFilePath: wx_res.tempFilePath,
-            filePath: wx_res.filePath,
-            statusCode: wx_res.statusCode,
-            profile: wx_res.profile,
+            tempFilePath: swan_res.tempFilePath,
+            filePath: swan_res.filePath,
+            statusCode: swan_res.statusCode,
+            profile: swan_res.profile,
             token
           }
           SUCCESS(quick_res)
         }
       })
     }, quick_success, quick_fail, quick_complete)
-    getApp().onekit_DownloadTask = swan.downloadFile(wx_object)
+    getApp().onekit_DownloadTask = swan.downloadFile(swan_object)
     getApp().onekit_url = quick_url
   },
   /** onDownloadComplete */
@@ -91,8 +91,8 @@ module.exports = {
     const quick_success = quick_object.success
     if (getApp().onekit_DownloadTask) {
       const DownloadTask = getApp().onekit_DownloadTask
-      DownloadTask.onProgressUpdate(wx_res => {
-        if (wx_res.progress === 100) {
+      DownloadTask.onProgressUpdate(swan_res => {
+        if (swan_res.progress === 100) {
           quick_success({
             uri: getApp().onekit_url
           })

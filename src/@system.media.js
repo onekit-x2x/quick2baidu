@@ -14,9 +14,9 @@ module.exports = {
     const CameraContext = swan.createCameraContext()
     PROMISE((SUCCESS) => {
       CameraContext.takePhoto({
-        success: wx_res => {
+        success: swan_res => {
           const quick_res = {
-            uri: wx_res.tempImagePath
+            uri: swan_res.tempImagePath
           }
           SUCCESS(quick_res)
         }
@@ -32,13 +32,13 @@ module.exports = {
     // const quick_cancel = quick_object.cancel
     PROMISE((SUCCESS) => {
       swan.chooseVideo({
-        success: wx_res => {
+        success: swan_res => {
           const quick_res = {
-            uri: wx_res.tempFilePath,
-            size: wx_res.size,
-            duration: wx_res.duration,
-            height: wx_res.height,
-            width: wx_res.width,
+            uri: swan_res.tempFilePath,
+            size: swan_res.size,
+            duration: swan_res.duration,
+            height: swan_res.height,
+            width: swan_res.width,
           }
           SUCCESS(quick_res)
         }
@@ -56,11 +56,11 @@ module.exports = {
     PROMISE((SUCCESS) => {
       swan.chooseImage({
         count: 1,
-        success: wx_res => {
+        success: swan_res => {
           const quick_res = {
-            tempFilePaths: wx_res.tempFilePaths,
-            uri: wx_res.tempFiles[0].path,
-            size: wx_res.tempFiles[0].size
+            tempFilePaths: swan_res.tempFilePaths,
+            uri: swan_res.tempFiles[0].path,
+            size: swan_res.tempFiles[0].size
           }
           SUCCESS(quick_res)
         }
@@ -77,13 +77,13 @@ module.exports = {
     // const quick_cancel = quick_object.cancel
     PROMISE((SUCCESS) => {
       swan.chooseImage({
-        success: wx_res => {
-          const quick_files = wx_res.tempFiles.map(file => ({
+        success: swan_res => {
+          const quick_files = swan_res.tempFiles.map(file => ({
             uri: file.path,
             size: file.size
           }))
           const quick_res = {
-            uris: wx_res.tempFilePaths,
+            uris: swan_res.tempFilePaths,
             files: quick_files
           }
           SUCCESS(quick_res)
@@ -102,13 +102,13 @@ module.exports = {
     // const quick_cancel = quick_object.cancel
     PROMISE((SUCCESS) => {
       swan.chooseVideo({
-        success: wx_res => {
+        success: swan_res => {
           const quick_res = {
-            uri: wx_res.tempFilePath,
-            size: wx_res.size,
-            duration: wx_res.duration,
-            height: wx_res.height,
-            width: wx_res.width,
+            uri: swan_res.tempFilePath,
+            size: swan_res.size,
+            duration: swan_res.duration,
+            height: swan_res.height,
+            width: swan_res.width,
           }
           SUCCESS(quick_res)
         }
@@ -126,8 +126,8 @@ module.exports = {
     PROMISE((SUCCESS) => {
       swan.chooseMedia({
         mediaType: ['video'],
-        success: wx_res => {
-          const quick_files = wx_res.tempFiles.map(file => ({
+        success: swan_res => {
+          const quick_files = swan_res.tempFiles.map(file => ({
             uri: file.tempFilePath,
             size: file.size,
             duration: file.duration,
@@ -136,13 +136,13 @@ module.exports = {
             thumbTempFilePath: file.thumbTempFilePath,
           }))
           const quick_uris = []
-          for (const value of wx_res.tempFiles) {
+          for (const value of swan_res.tempFiles) {
             quick_uris.push(value.tempFilePath)
           }
           const quick_res = {
             uris: quick_uris,
             files: quick_files,
-            type: wx_res.type
+            type: swan_res.type
           }
           SUCCESS(quick_res)
         }
@@ -164,12 +164,12 @@ module.exports = {
     PROMISE((SUCCESS) => {
       swan.chooseMessageFile({
         count: 1,
-        success: wx_res => {
+        success: swan_res => {
           const quick_res = {
-            tempFiles: wx_res.tempFiles,
-            uri: wx_res.tempFiles[0].path,
-            size: wx_res.tempFiles[0].size,
-            name: wx_res.tempFiles[0].name,
+            tempFiles: swan_res.tempFiles,
+            uri: swan_res.tempFiles[0].path,
+            size: swan_res.tempFiles[0].size,
+            name: swan_res.tempFiles[0].name,
           }
           SUCCESS(quick_res)
         }
@@ -187,13 +187,13 @@ module.exports = {
     const quick_complete = quick_object.complete
     const quick_uri = quick_object.uri
     quick_object = null
-    const wx_object = {
+    const swan_object = {
       filePath: quick_uri,
       success: quick_success,
       fail: quick_fail,
       complete: quick_complete,
     }
-    swan.saveImageToPhotosAlbum(wx_object)
+    swan.saveImageToPhotosAlbum(swan_object)
   },
 
   /** media.previewImage */
@@ -205,14 +205,14 @@ module.exports = {
     const quick_current = quick_object.current || 0
     // const quick_cancel = quick_object.cancel
     quick_object = null
-    const wx_object = {
+    const swan_object = {
       urls: quick_uris,
       current: quick_current,
       success: quick_success,
       fail: quick_fail,
       complete: quick_complete,
     }
-    swan.previewImage(wx_object)
+    swan.previewImage(swan_object)
   },
   /** media.getRingtone */
   getRingtone() {

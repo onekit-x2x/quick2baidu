@@ -21,10 +21,10 @@ export default class WebSocket {
   }
 
   onclose(callback) {
-    this.socket.onClose(function (wx_res) {
+    this.socket.onClose(function (swan_res) {
       const quick_res = {
-        code: wx_res.code,
-        reason: wx_res.reason,
+        code: swan_res.code,
+        reason: swan_res.reason,
         wasClean: 'normal closure',
       }
       callback(quick_res)

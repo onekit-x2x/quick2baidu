@@ -12,17 +12,17 @@ module.exports = {
     }
     const quick_message = quick_object.message
     const quick_duration = quick_object.duration || 0
-    let wx_duration
+    let swan_duration
     if (quick_duration === 0) {
-      wx_duration = 1500
+      swan_duration = 1500
     } else {
-      wx_duration = 3000
+      swan_duration = 3000
     }
-    const wx_object = {
+    const swan_object = {
       title: quick_message,
-      duration: wx_duration
+      duration: swan_duration
     }
-    swan.showToast(wx_object)
+    swan.showToast(swan_object)
   },
 
   showDialog(quick_object) {
@@ -46,9 +46,9 @@ module.exports = {
           content: quick_message,
           confirmText,
           confirmColor,
-          success: wx_res => {
+          success: swan_res => {
             let quick_res
-            if (wx_res.confirm) {
+            if (swan_res.confirm) {
               quick_res = {
                 index: 0
               }
@@ -75,9 +75,9 @@ module.exports = {
           cancelColor,
           confirmText,
           confirmColor,
-          success: wx_res => {
+          success: swan_res => {
             let quick_res
-            if (wx_res.confirm) {
+            if (swan_res.confirm) {
               quick_res = {
                 index: 0
               }
@@ -107,9 +107,9 @@ module.exports = {
       swan.showActionSheet({
         itemList: quick_itemList,
         itemColor: quick_itemColor,
-        success: wx_res => {
+        success: swan_res => {
           const quick_res = {
-            index: wx_res.tapIndex
+            index: swan_res.tapIndex
           }
           SUCCESS(quick_res)
         }

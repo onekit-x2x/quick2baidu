@@ -17,7 +17,7 @@ module.exports = {
       success(res) {
         console.log('授权成功 ：', res)
         swan.request({
-          url: 'http://192.168.22.116/quick/weixin/wxaccount/authorize',
+          url: 'http://192.168.22.116/quick/baidu/wxaccount/authorize',
           data: {
             JSCODE: res.code
           },

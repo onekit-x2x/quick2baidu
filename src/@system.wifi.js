@@ -30,12 +30,12 @@ module.exports = {
     quick_object = null
     PROMISE((SUCCESS) => {
       swan.getConnectedWifi({
-        success: wx_res => {
+        success: swan_res => {
           const quick_res = {
-            SSID: wx_res.wifi.SSID,
-            BSSID: wx_res.wifi.BSSID,
-            secure: wx_res.wifi.secure,
-            signalStrength: wx_res.wifi.signalStrength,
+            SSID: swan_res.wifi.SSID,
+            BSSID: swan_res.wifi.BSSID,
+            secure: swan_res.wifi.secure,
+            signalStrength: swan_res.wifi.signalStrength,
           }
           SUCCESS(quick_res)
         }
@@ -51,19 +51,19 @@ module.exports = {
   /** wifi.onstatechanged */
   set onstatechanged(callback) {
     swan.startWifi()
-    swan.onWifiConnected(wx_res => {
+    swan.onWifiConnected(swan_res => {
       let state
-      if (wx_res.wifi.secure) {
+      if (swan_res.wifi.secure) {
         state = 1
       } else {
         state = 0
       }
       const quick_res = {
         state,
-        SSID: wx_res.wifi.SSID,
-        BSSID: wx_res.wifi.BSSID,
-        secure: wx_res.wifi.secure,
-        signalStrength: wx_res.wifi.signalStrength,
+        SSID: swan_res.wifi.SSID,
+        BSSID: swan_res.wifi.BSSID,
+        secure: swan_res.wifi.secure,
+        signalStrength: swan_res.wifi.signalStrength,
       }
       callback(quick_res)
     })

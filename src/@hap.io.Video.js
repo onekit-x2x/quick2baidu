@@ -14,17 +14,17 @@ module.exports = {
     PROMISE((SUCCESS) => {
       swan.getVideoInfo({
         src: quick_uri,
-        success: wx_res => {
+        success: swan_res => {
           const quick_res = {
             uri: quick_uri,
-            size: wx_res.size,
-            height: wx_res.height,
-            width: wx_res.width,
-            bitrate: wx_res.bitrate,
-            framerate: wx_res.fps,
-            orientation: wx_res.orientation,
-            type: wx_res.type,
-            duration: wx_res.duration,
+            size: swan_res.size,
+            height: swan_res.height,
+            width: swan_res.width,
+            bitrate: swan_res.bitrate,
+            framerate: swan_res.fps,
+            orientation: swan_res.orientation,
+            type: swan_res.type,
+            duration: swan_res.duration,
           }
           SUCCESS(quick_res)
         }

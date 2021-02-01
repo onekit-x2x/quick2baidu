@@ -15,10 +15,10 @@ module.exports = {
     quick_object = null
     PROMISE((SUCCESS) => {
       swan.getBatteryInfo({
-        success: (wx_res) => {
+        success: (swan_res) => {
           const quick_res = {
-            charging: wx_res.isCharging,
-            level: wx_res.level / 100,
+            charging: swan_res.isCharging,
+            level: swan_res.level / 100,
           }
           SUCCESS(quick_res)
         }

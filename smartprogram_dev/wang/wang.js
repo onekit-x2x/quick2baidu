@@ -1,5 +1,7 @@
-import {OnekitPage} from '../weixin2baidu/index';
-import {swan} from '../weixin2baidu/index'
+import {
+  OnekitPage
+} from '../quickapp2baidu/index';
+
 // import {STRING} from 'oneutil'
 
 global = {};

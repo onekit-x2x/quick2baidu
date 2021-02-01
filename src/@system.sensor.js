@@ -7,15 +7,15 @@ module.exports = {
     }
     const quick_interval = quick_object.interval || 'normal'
     const quick_callback = quick_object.callback
-    const wx_object = {
+    const swan_object = {
       interval: quick_interval,
     }
-    swan.startAccelerometer(wx_object)
-    swan.onAccelerometerChange(wx_res => {
+    swan.startAccelerometer(swan_object)
+    swan.onAccelerometerChange(swan_res => {
       const quick_res = {
-        x: wx_res.x,
-        y: wx_res.y,
-        z: wx_res.z,
+        x: swan_res.x,
+        y: swan_res.y,
+        z: swan_res.z,
       }
       quick_callback(quick_res)
     })

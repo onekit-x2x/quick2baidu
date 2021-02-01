@@ -11,7 +11,7 @@ module.exports = {
     }
     // const quick_callback = quick_object.callback
     // //////////////////////
-    console.error('[quick2weixin]', '暂未开通支付宝app支付')
+    console.error('[quick2baidu]', '暂未开通支付宝app支付')
   }
 
 

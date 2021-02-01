@@ -33,9 +33,9 @@ module.exports = {
     quick_object = null
     PROMISE((SUCCESS) => {
       swan.getClipboardData({
-        success: wx_res => {
+        success: swan_res => {
           const quick_res = {
-            text: wx_res.data
+            text: swan_res.data
           }
           SUCCESS(quick_res)
         }

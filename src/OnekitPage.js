@@ -1,9 +1,9 @@
 /* eslint-disable camelcase */
 export default function OnekitPage(quick_object) {
-  const wx_object = quick_object
-  wx_object.animate = function () {
+  const swan_object = quick_object
+  swan_object.animate = function () {
 
   }
 
-  return Page(wx_object)
+  return Page(swan_object)
 }

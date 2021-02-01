@@ -1,7 +1,11 @@
-import {OnekitPage,swan} from '../weixin2baidu/index';
-global = {};
+import {
+  OnekitPage,
+  swan
+} from '../quickapp2baidu/index'
 
-//progress
+global = {}
+
+// progress
 // const app = getApp()
 // OnekitPage({
 //     data:{},
@@ -10,12 +14,12 @@ global = {};
 //     },
 //     onLoad:function(){
 //         console.log('代码片段是一种迷你、可分享的小程序或小游戏项目，可用于分享小程序和小游戏的开发经验、展示组件和 API 的使用、复现开发问题和 Bug 等。可点击以下链接查看代码片段的详细文档：')
-//         console.log('https://mp.weixin.qq.com/debug/wxadoc/dev/devtools/devtools.html')
+//         console.log('https://mp.baidu.qq.com/debug/wxadoc/dev/devtools/devtools.html')
 //     }
 // })
 
 
-//button
+// button
 // const types = [
 //     'default',
 //     'primary',
@@ -80,7 +84,7 @@ global = {};
 // OnekitPage(pageObject);
 
 
-//input
+// input
 // OnekitPage({
 //     data:{
 //         focus:false,
@@ -111,7 +115,7 @@ global = {};
 //     }
 // })
 
-//picker
+// picker
 // OnekitPage({
 //     data: {
 //       array: ['美国', '中国', '巴西', '日本'],
@@ -364,7 +368,7 @@ global = {};
 //     }
 // })
 
-//picker-view
+// picker-view
 // const date = new Date()
 // const years = [
 // ]
@@ -420,7 +424,7 @@ global = {};
 //     }
 // })
 
-//slider
+// slider
 // var pageData = {}
 // for(var i = 1;i < 5;++i){
 //     (function(index){
@@ -431,7 +435,7 @@ global = {};
 // }
 // OnekitPage(pageData)
 
-//camera
+// camera
 // OnekitPage({
 //     takePhoto:function(){
 //         const ctx = swan.createCameraContext()
@@ -449,7 +453,7 @@ global = {};
 //     }
 // })
 
-//video
+// video
 // function getRandomColor(){
 //     const rgb = [
 //     ]
@@ -532,7 +536,7 @@ global = {};
 //     }
 // })
 
-//map
+// map
 // OnekitPage({
 //     onShareAppMessage:function(){
 //         return {
@@ -640,7 +644,7 @@ global = {};
 //     }
 // })
 
-//cavans
+// cavans
 // const app = getApp()
 // OnekitPage({
 //     data:{},

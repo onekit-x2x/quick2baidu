@@ -14,14 +14,14 @@ module.exports = {
     quick_object = null
     PROMISE((SUCCESS) => {
       swan.getNetworkType({
-        success: wx_res => {
+        success: swan_res => {
           let quick_res_type
-          switch (wx_res.networkType) {
+          switch (swan_res.networkType) {
             case 'unknown':
               quick_res_type = 'others'
               break
             default:
-              quick_res_type = wx_res.networkType
+              quick_res_type = swan_res.networkType
               break
           }
           const quick_res = {
@@ -42,20 +42,20 @@ module.exports = {
     }
     const quick_callback = quick_object.callback
     quick_object = null
-    swan.onNetworkStatusChange(function (wx_res) {
+    swan.onNetworkStatusChange(function (swan_res) {
       let quick_res_type
-      switch (wx_res.networkType) {
+      switch (swan_res.networkType) {
         case 'unknown':
           quick_res_type = 'others'
           break
         default:
-          quick_res_type = wx_res.networkType
+          quick_res_type = swan_res.networkType
           break
       }
       const quick_res = {
         type: quick_res_type,
         metered: false,
-        isConnected: wx_res.isConnected
+        isConnected: swan_res.isConnected
       }
       quick_callback(quick_res)
     })

@@ -13,7 +13,7 @@ module.exports = {
     if (quick_uri.startsWith('/')) {
       if (quick_uri === '/') {
         swan.reLaunch({
-          url: `/quickapp2weixin/page/router.push/ie?url=${encodeURI(quick_uri)}`
+          url: `/quickapp2baidu/page/router.push/ie?url=${encodeURI(quick_uri)}`
         })
       } else {
         swan.navigateTo({
@@ -45,7 +45,7 @@ module.exports = {
       case 'http':
       case 'https':
         swan.navigateTo({
-          url: `/quickapp2weixin/page/router.push/ie?url=${encodeURI(quick_uri)}`
+          url: `/quickapp2baidu/page/router.push/ie?url=${encodeURI(quick_uri)}`
         })
         break
       case 'internal':
@@ -89,7 +89,7 @@ module.exports = {
     if (quick_uri.startsWith('/')) {
       if (quick_uri === '/') {
         swan.reLaunch({
-          url: `/quickapp2weixin/page/router.push/ie?url=${encodeURI(quick_uri)}`
+          url: `/quickapp2baidu/page/router.push/ie?url=${encodeURI(quick_uri)}`
         })
       } else {
         swan.navigateTo({
@@ -107,7 +107,7 @@ module.exports = {
     } else if (quick_path.startsWith('/')) {
       if (quick_path === '/') {
         swan.navigateTo({
-          url: `/quickapp2weixin/page/router.push/ie?url=${encodeURI(quick_path)}`
+          url: `/quickapp2baidu/page/router.push/ie?url=${encodeURI(quick_path)}`
         })
       } else {
         swan.reLaunch({
@@ -119,21 +119,21 @@ module.exports = {
   /** router.clear() */
 
   clear() {
-    //  const wx_object = {}
+    //  const swan_object = {}
   },
   /** router.getLength */
 
   getLength() {
-    //  const wx_object = {}
+    //  const swan_object = {}
   },
   /** router.getState */
 
   getState() {
-    //  const wx_object = {}
+    //  const swan_object = {}
   },
   /** router.getPages */
 
   getPages() {
-    //  const wx_object = {}
+    //  const swan_object = {}
   }
 }

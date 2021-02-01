@@ -14,7 +14,7 @@ module.exports = {
     const quick_encodeBitRate = quick_object.encodeBitRate || 48000
     const quick_format = quick_object.format || 'aac'
     quick_object = null
-    const wx_object = {
+    const swan_object = {
       duration: quick_duration,
       sampleRate: quick_sampleRate,
       numberOfChannels: quick_numberOfChannels,
@@ -25,7 +25,7 @@ module.exports = {
       complete: quick_complete,
     }
     const recorderManager = swan.getRecorderManager()
-    recorderManager.start(wx_object)
+    recorderManager.start(swan_object)
   },
   /** record.stop */
   stop() {

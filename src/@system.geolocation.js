@@ -18,15 +18,15 @@ module.exports = {
       swan.getLocation({
         type: quick_coordType,
         highAccuracyExpireTime: quick_timeout,
-        success: wx_res => {
+        success: swan_res => {
           const quick_res = {
-            latitude: wx_res.latitude,
-            longitude: wx_res.longitude,
-            speed: wx_res.speed,
-            accuracy: wx_res.accuracy,
-            altitude: wx_res.altitude,
-            verticalAccuracy: wx_res.verticalAccuracy,
-            horizontalAccuracy: wx_res.horizontalAccuracy,
+            latitude: swan_res.latitude,
+            longitude: swan_res.longitude,
+            speed: swan_res.speed,
+            accuracy: swan_res.accuracy,
+            altitude: swan_res.altitude,
+            verticalAccuracy: swan_res.verticalAccuracy,
+            horizontalAccuracy: swan_res.horizontalAccuracy,
             time: new Date().getTime()
           }
           SUCCESS(quick_res)
@@ -81,12 +81,12 @@ module.exports = {
       swan.chooseLocation({
         latitude: quick_latitude,
         longitude: quick_longitude,
-        success: (wx_res) => {
+        success: (swan_res) => {
           const quick_res = {
-            name: wx_res.name,
-            address: wx_res.address,
-            latitude: wx_res.latitude,
-            longitude: wx_res.longitude,
+            name: swan_res.name,
+            address: swan_res.address,
+            latitude: swan_res.latitude,
+            longitude: swan_res.longitude,
             coordType: quick_coordType,
           }
           SUCCESS(quick_res)
@@ -115,15 +115,15 @@ module.exports = {
     swan.startLocationUpdate()
     const quick_callback = quick_object.callback
     quick_object = null
-    swan.onLocationChange(function (wx_res) {
+    swan.onLocationChange(function (swan_res) {
       const quick_res = {
-        latitude: wx_res.latitude,
-        longitude: wx_res.longitude,
-        speed: wx_res.speed,
-        accuracy: wx_res.accuracy,
-        altitude: wx_res.altitude,
-        verticalAccuracy: wx_res.verticalAccuracy,
-        horizontalAccuracy: wx_res.horizontalAccuracy,
+        latitude: swan_res.latitude,
+        longitude: swan_res.longitude,
+        speed: swan_res.speed,
+        accuracy: swan_res.accuracy,
+        altitude: swan_res.altitude,
+        verticalAccuracy: swan_res.verticalAccuracy,
+        horizontalAccuracy: swan_res.horizontalAccuracy,
         time: new Date().getTime()
       }
       quick_callback(quick_res)

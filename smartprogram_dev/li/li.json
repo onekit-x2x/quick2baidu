@@ -1,18 +1,18 @@
 {
     "usingComponents":{
-        "onekit-scroll-view":"../weixin2baidu/ui/scroll-view/scroll-view/index",
-        "onekit-swiper":"../weixin2baidu/ui/swiper/swiper/index",
-        "onekit-progress":"../weixin2baidu/ui/progress/progress/index",
-        "onekit-text":"../weixin2baidu/ui/text/text/index",
-        "onekit-button":"../weixin2baidu/ui/button/button/index",
-        "onekit-input":"../weixin2baidu/ui/input/input/index",
-        "onekit-picker":"../weixin2baidu/ui/picker/picker/index",
-        "onekit-slider":"../weixin2baidu/ui/slider/slider/index",
-        "onekit-camera":"../weixin2baidu/ui/camera/camera/index",
-        "onekit-video":"../weixin2baidu/ui/video/video/index",
-        "onekit-map":"../weixin2baidu/ui/map/map/index",
-        "onekit-canvas":"../weixin2baidu/ui/canvas/canvas/index",
-        "onekit-page-meta":"../weixin2baidu/ui/page-meta/page-meta/index"
+        "onekit-scroll-view":"../quickapp2baidu/ui/scroll-view/scroll-view/index",
+        "onekit-swiper":"../quickapp2baidu/ui/swiper/swiper/index",
+        "onekit-progress":"../quickapp2baidu/ui/progress/progress/index",
+        "onekit-text":"../quickapp2baidu/ui/text/text/index",
+        "onekit-button":"../quickapp2baidu/ui/button/button/index",
+        "onekit-input":"../quickapp2baidu/ui/input/input/index",
+        "onekit-picker":"../quickapp2baidu/ui/picker/picker/index",
+        "onekit-slider":"../quickapp2baidu/ui/slider/slider/index",
+        "onekit-camera":"../quickapp2baidu/ui/camera/camera/index",
+        "onekit-video":"../quickapp2baidu/ui/video/video/index",
+        "onekit-map":"../quickapp2baidu/ui/map/map/index",
+        "onekit-canvas":"../quickapp2baidu/ui/canvas/canvas/index",
+        "onekit-page-meta":"../quickapp2baidu/ui/page-meta/page-meta/index"
     },
     "enablePullDownRefresh": true
 }

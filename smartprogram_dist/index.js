@@ -148,7 +148,7 @@ module.exports = {
     if (quick_uri.startsWith('/')) {
       if (quick_uri === '/') {
         swan.reLaunch({
-          url: '/quickapp2weixin/page/router.push/ie?url=' + encodeURI(quick_uri)
+          url: '/quickapp2baidu/page/router.push/ie?url=' + encodeURI(quick_uri)
         });
       } else {
         swan.navigateTo({
@@ -180,7 +180,7 @@ module.exports = {
       case 'http':
       case 'https':
         swan.navigateTo({
-          url: '/quickapp2weixin/page/router.push/ie?url=' + encodeURI(quick_uri)
+          url: '/quickapp2baidu/page/router.push/ie?url=' + encodeURI(quick_uri)
         });
         break;
       case 'internal':
@@ -224,7 +224,7 @@ module.exports = {
     if (quick_uri.startsWith('/')) {
       if (quick_uri === '/') {
         swan.reLaunch({
-          url: '/quickapp2weixin/page/router.push/ie?url=' + encodeURI(quick_uri)
+          url: '/quickapp2baidu/page/router.push/ie?url=' + encodeURI(quick_uri)
         });
       } else {
         swan.navigateTo({
@@ -243,7 +243,7 @@ module.exports = {
     } else if (quick_path.startsWith('/')) {
       if (quick_path === '/') {
         swan.navigateTo({
-          url: '/quickapp2weixin/page/router.push/ie?url=' + encodeURI(quick_path)
+          url: '/quickapp2baidu/page/router.push/ie?url=' + encodeURI(quick_path)
         });
       } else {
         swan.reLaunch({
@@ -256,25 +256,25 @@ module.exports = {
   /** router.clear() */
 
   clear: function clear() {
-    //  const wx_object = {}
+    //  const swan_object = {}
   },
 
   /** router.getLength */
 
   getLength: function getLength() {
-    //  const wx_object = {}
+    //  const swan_object = {}
   },
 
   /** router.getState */
 
   getState: function getState() {
-    //  const wx_object = {}
+    //  const swan_object = {}
   },
 
   /** router.getPages */
 
   getPages: function getPages() {
-    //  const wx_object = {}
+    //  const swan_object = {}
   }
 }; /* eslint-disable no-console */
 /* eslint-disable camelcase */
@@ -483,12 +483,12 @@ var _Video = __webpack_require__(64);
 
 var _Video2 = _interopRequireDefault(_Video);
 
-var _service = __webpack_require__(66);
-
-var _service2 = _interopRequireDefault(_service);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable camelcase */
+/* eslint-disable no-console */
 exports.default = {
   OnekitApp: _OnekitApp2.default,
   OnekitBehavior: _OnekitBehavior2.default,
@@ -519,12 +519,9 @@ exports.default = {
   '@system.media': _system46.default,
   '@system.image': _system48.default,
   '@system.audio': _system50.default,
-  '@hap.io.Video': _Video2.default,
-  '@service.texttoaudio': _service2.default
-}; /* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
-/* eslint-disable camelcase */
-/* eslint-disable no-console */
+  '@hap.io.Video': _Video2.default
+
+};
 
 /***/ }),
 /* 34 */
@@ -538,8 +535,8 @@ exports.default = OnekitApp;
 /* eslint-disable camelcase */
 
 function OnekitApp(quick_object) {
-  var wx_object = quick_object;
-  return App(wx_object);
+  var swan_object = quick_object;
+  return App(swan_object);
 }
 
 /***/ }),
@@ -553,8 +550,8 @@ exports.__esModule = true;
 exports.default = OnekitBehavior;
 /* eslint-disable camelcase */
 function OnekitBehavior(quick_object) {
-  var wx_object = quick_object;
-  return Behavior(wx_object);
+  var swan_object = quick_object;
+  return Behavior(swan_object);
 }
 
 /***/ }),
@@ -568,8 +565,8 @@ exports.__esModule = true;
 exports.default = OnekitComponent;
 /* eslint-disable camelcase */
 function OnekitComponent(quick_object) {
-  var wx_object = quick_object;
-  return Component(wx_object);
+  var swan_object = quick_object;
+  return Component(swan_object);
 }
 
 /***/ }),
@@ -583,10 +580,10 @@ exports.__esModule = true;
 exports.default = OnekitPage;
 /* eslint-disable camelcase */
 function OnekitPage(quick_object) {
-  var wx_object = quick_object;
-  wx_object.animate = function () {};
+  var swan_object = quick_object;
+  swan_object.animate = function () {};
 
-  return Page(wx_object);
+  return Page(swan_object);
 }
 
 /***/ }),
@@ -602,17 +599,17 @@ function OnekitPage(quick_object) {
 
 module.exports = {
   getLocale: function getLocale() {
-    var wx_res = swan.getSystemInfoSync();
+    var swan_res = swan.getSystemInfoSync();
     var quick_res = {
-      language: wx_res.language,
+      language: swan_res.language,
       countryOrRegion: 'CN'
     };
     return quick_res;
   },
   setLocale: function setLocale() {},
   getThemeMode: function getThemeMode() {
-    var wx_res = swan.getSystemInfoSync();
-    if (wx_res.theme === 'light') {
+    var swan_res = swan.getSystemInfoSync();
+    if (swan_res.theme === 'light') {
       return 0;
     } else {
       return 1;
@@ -640,17 +637,17 @@ module.exports = {
     }
     var quick_message = quick_object.message;
     var quick_duration = quick_object.duration || 0;
-    var wx_duration = void 0;
+    var swan_duration = void 0;
     if (quick_duration === 0) {
-      wx_duration = 1500;
+      swan_duration = 1500;
     } else {
-      wx_duration = 3000;
+      swan_duration = 3000;
     }
-    var wx_object = {
+    var swan_object = {
       title: quick_message,
-      duration: wx_duration
+      duration: swan_duration
     };
-    swan.showToast(wx_object);
+    swan.showToast(swan_object);
   },
   showDialog: function showDialog(quick_object) {
     if (!quick_object) {
@@ -673,9 +670,9 @@ module.exports = {
           content: quick_message,
           confirmText: confirmText,
           confirmColor: confirmColor,
-          success: function success(wx_res) {
+          success: function success(swan_res) {
             var quick_res = void 0;
-            if (wx_res.confirm) {
+            if (swan_res.confirm) {
               quick_res = {
                 index: 0
               };
@@ -702,9 +699,9 @@ module.exports = {
           cancelColor: cancelColor,
           confirmText: _confirmText,
           confirmColor: _confirmColor,
-          success: function success(wx_res) {
+          success: function success(swan_res) {
             var quick_res = void 0;
-            if (wx_res.confirm) {
+            if (swan_res.confirm) {
               quick_res = {
                 index: 0
               };
@@ -733,9 +730,9 @@ module.exports = {
       swan.showActionSheet({
         itemList: quick_itemList,
         itemColor: quick_itemColor,
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            index: wx_res.tapIndex
+            index: swan_res.tapIndex
           };
           SUCCESS(quick_res);
         }
@@ -764,7 +761,7 @@ module.exports = {
     var quick_url = quick_object.url;
     quick_object = null;
     swan.navigateTo({
-      url: "/quickapp2weixin/page/router.push/ie?url=" + encodeURI(quick_url)
+      url: "/quickapp2baidu/page/router.push/ie?url=" + encodeURI(quick_url)
     });
   }
 };
@@ -812,10 +809,10 @@ module.exports = {
           filePath: filePath,
           header: quick_header,
           formData: quick_data[0],
-          success: function success(wx_res) {
+          success: function success(swan_res) {
             var quick_res = {
-              code: wx_res.statusCode,
-              data: wx_res.data
+              code: swan_res.statusCode,
+              data: swan_res.data
             };
             callback(quick_res);
           }
@@ -843,7 +840,7 @@ module.exports = {
     var filename = quick_object.filename || quick_url.substring(quick_url.lastIndexOf('/') + 1);
     var filePath = swan.env.USER_DATA_PATH + '/' + filename;
     quick_object = null;
-    var wx_object = {
+    var swan_object = {
       url: quick_url,
       filePath: filePath
     };
@@ -851,20 +848,20 @@ module.exports = {
       swan.downloadFile({
         url: quick_url,
         filePath: filePath,
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var token = '' + new Date().getTime();
           var quick_res = {
-            tempFilePath: wx_res.tempFilePath,
-            filePath: wx_res.filePath,
-            statusCode: wx_res.statusCode,
-            profile: wx_res.profile,
+            tempFilePath: swan_res.tempFilePath,
+            filePath: swan_res.filePath,
+            statusCode: swan_res.statusCode,
+            profile: swan_res.profile,
             token: token
           };
           SUCCESS(quick_res);
         }
       });
     }, quick_success, quick_fail, quick_complete);
-    getApp().onekit_DownloadTask = swan.downloadFile(wx_object);
+    getApp().onekit_DownloadTask = swan.downloadFile(swan_object);
     getApp().onekit_url = quick_url;
   },
 
@@ -877,8 +874,8 @@ module.exports = {
     var quick_success = quick_object.success;
     if (getApp().onekit_DownloadTask) {
       var DownloadTask = getApp().onekit_DownloadTask;
-      DownloadTask.onProgressUpdate(function (wx_res) {
-        if (wx_res.progress === 100) {
+      DownloadTask.onProgressUpdate(function (swan_res) {
+        if (swan_res.progress === 100) {
           quick_success({
             uri: getApp().onekit_url
           });
@@ -944,13 +941,13 @@ module.exports = {
         header: quick_header,
         method: quick_method,
         responseType: quick_responseType,
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            code: wx_res.statusCode,
-            data: wx_res.data,
-            headers: wx_res.header,
-            cookies: wx_res.cookies,
-            profile: wx_res.profile
+            code: swan_res.statusCode,
+            data: swan_res.data,
+            headers: swan_res.header,
+            cookies: swan_res.cookies,
+            profile: swan_res.profile
           };
           SUCCESS(quick_res);
         }
@@ -982,14 +979,14 @@ module.exports = {
     // const protocols = quick_object.protocols
     // // /////////////////////////////////////////
     // const DATA = ['HTTPS', 'HTTP']
-    // const wx_object = {
+    // const swan_object = {
     //   url,
     //   header,
     //   protocols: []
     // }
     // for (const protocol of protocols) {
     //   if (DATA.indexOf(protocol.toLowerCase()) >= 0) {
-    //     wx_object.protocols.push(protocol)
+    //     swan_object.protocols.push(protocol)
     //   }
     // }
     var socket = swan.connectSocket(quick_object);
@@ -1033,10 +1030,10 @@ var WebSocket = function () {
   };
 
   WebSocket.prototype.onclose = function onclose(callback) {
-    this.socket.onClose(function (wx_res) {
+    this.socket.onClose(function (swan_res) {
       var quick_res = {
-        code: wx_res.code,
-        reason: wx_res.reason,
+        code: swan_res.code,
+        reason: swan_res.reason,
         wasClean: 'normal closure'
       };
       callback(quick_res);
@@ -1128,8 +1125,8 @@ module.exports = {
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.getStorage({
         key: quick_key,
-        success: function success(wx_res) {
-          var quick_res = wx_res.data;
+        success: function success(swan_res) {
+          var quick_res = swan_res.data;
           SUCCESS(quick_res);
         },
         fail: function fail() {
@@ -1194,8 +1191,8 @@ module.exports = {
     quick_object = null;
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.getStorageInfo({
-        success: function success(wx_res) {
-          var quick_res = wx_res.keys[quick_index];
+        success: function success(swan_res) {
+          var quick_res = swan_res.keys[quick_index];
           SUCCESS(quick_res);
         }
       });
@@ -1281,9 +1278,9 @@ module.exports = {
     (0, _PROMISE2.default)(function (SUCCESS) {
       FileSystemManager.readdir({
         dirPath: quick_uri,
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            fileList: wx_res.files
+            fileList: swan_res.files
           };
           SUCCESS(quick_res);
         }
@@ -1306,9 +1303,9 @@ module.exports = {
     (0, _PROMISE2.default)(function (SUCCESS) {
       FileSystemManager.getFileInfo({
         filePath: quick_uri,
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            length: wx_res.size,
+            length: swan_res.size,
             lastModifiedTime: new Date().getTime()
           };
           SUCCESS(quick_res);
@@ -1328,13 +1325,13 @@ module.exports = {
     var quick_complete = quick_object.complete;
     var quick_uri = quick_object.uri;
     quick_object = null;
-    var wx_object = {
+    var swan_object = {
       filePath: quick_uri,
       success: quick_success,
       fail: quick_fail,
       complete: quick_complete
     };
-    return swan.getFileSystemManager().unlink(wx_object);
+    return swan.getFileSystemManager().unlink(swan_object);
   },
 
   /** file.writeText */
@@ -1416,9 +1413,9 @@ module.exports = {
       FileSystemManager.readFile({
         filePath: quick_uri,
         encoding: quick_encoding,
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            text: wx_res.data
+            text: swan_res.data
           };
           SUCCESS(quick_res);
         },
@@ -1441,9 +1438,9 @@ module.exports = {
     (0, _PROMISE2.default)(function (SUCCESS) {
       FileSystemManager.readFile({
         filePath: quick_uri,
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            buffer: wx_res.data
+            buffer: swan_res.data
           };
           SUCCESS(quick_res);
         }
@@ -1564,16 +1561,16 @@ module.exports = {
     var quick_fail = quick_object.fail;
     var quick_complete = quick_object.complete;
     quick_object = null;
-    var wx_object = {
+    var swan_object = {
       type: 'medium',
       success: quick_success,
       fail: quick_fail,
       complete: quick_complete
     };
     if (quick_mode === 'short') {
-      return swan.vibrateShort(wx_object);
+      return swan.vibrateShort(swan_object);
     } else {
-      return swan.vibrateLong(wx_object);
+      return swan.vibrateLong(swan_object);
     }
   }
 };
@@ -1604,13 +1601,13 @@ module.exports = {
     quick_object = null;
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.scanCode({
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            result: wx_res.result,
-            scanType: wx_res.scanType,
-            charSet: wx_res.charSet,
-            path: wx_res.path,
-            rawData: wx_res.rawData
+            result: swan_res.result,
+            scanType: swan_res.scanType,
+            charSet: swan_res.charSet,
+            path: swan_res.path,
+            rawData: swan_res.rawData
           };
           SUCCESS(quick_res);
         }
@@ -1636,15 +1633,15 @@ module.exports = {
     }
     var quick_interval = quick_object.interval || 'normal';
     var quick_callback = quick_object.callback;
-    var wx_object = {
+    var swan_object = {
       interval: quick_interval
     };
-    swan.startAccelerometer(wx_object);
-    swan.onAccelerometerChange(function (wx_res) {
+    swan.startAccelerometer(swan_object);
+    swan.onAccelerometerChange(function (swan_res) {
       var quick_res = {
-        x: wx_res.x,
-        y: wx_res.y,
-        z: wx_res.z
+        x: swan_res.x,
+        y: swan_res.y,
+        z: swan_res.z
       };
       quick_callback(quick_res);
     });
@@ -1797,9 +1794,9 @@ module.exports = {
     quick_object = null;
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.getClipboardData({
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            text: wx_res.data
+            text: swan_res.data
           };
           SUCCESS(quick_res);
         }
@@ -1836,15 +1833,15 @@ module.exports = {
       swan.getLocation({
         type: quick_coordType,
         highAccuracyExpireTime: quick_timeout,
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            latitude: wx_res.latitude,
-            longitude: wx_res.longitude,
-            speed: wx_res.speed,
-            accuracy: wx_res.accuracy,
-            altitude: wx_res.altitude,
-            verticalAccuracy: wx_res.verticalAccuracy,
-            horizontalAccuracy: wx_res.horizontalAccuracy,
+            latitude: swan_res.latitude,
+            longitude: swan_res.longitude,
+            speed: swan_res.speed,
+            accuracy: swan_res.accuracy,
+            altitude: swan_res.altitude,
+            verticalAccuracy: swan_res.verticalAccuracy,
+            horizontalAccuracy: swan_res.horizontalAccuracy,
             time: new Date().getTime()
           };
           SUCCESS(quick_res);
@@ -1901,12 +1898,12 @@ module.exports = {
       swan.chooseLocation({
         latitude: quick_latitude,
         longitude: quick_longitude,
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            name: wx_res.name,
-            address: wx_res.address,
-            latitude: wx_res.latitude,
-            longitude: wx_res.longitude,
+            name: swan_res.name,
+            address: swan_res.address,
+            latitude: swan_res.latitude,
+            longitude: swan_res.longitude,
             coordType: quick_coordType
           };
           SUCCESS(quick_res);
@@ -1937,15 +1934,15 @@ module.exports = {
     swan.startLocationUpdate();
     var quick_callback = quick_object.callback;
     quick_object = null;
-    swan.onLocationChange(function (wx_res) {
+    swan.onLocationChange(function (swan_res) {
       var quick_res = {
-        latitude: wx_res.latitude,
-        longitude: wx_res.longitude,
-        speed: wx_res.speed,
-        accuracy: wx_res.accuracy,
-        altitude: wx_res.altitude,
-        verticalAccuracy: wx_res.verticalAccuracy,
-        horizontalAccuracy: wx_res.horizontalAccuracy,
+        latitude: swan_res.latitude,
+        longitude: swan_res.longitude,
+        speed: swan_res.speed,
+        accuracy: swan_res.accuracy,
+        altitude: swan_res.altitude,
+        verticalAccuracy: swan_res.verticalAccuracy,
+        horizontalAccuracy: swan_res.horizontalAccuracy,
         time: new Date().getTime()
       };
       quick_callback(quick_res);
@@ -2002,14 +1999,14 @@ module.exports = {
     quick_object = null;
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.getNetworkType({
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res_type = void 0;
-          switch (wx_res.networkType) {
+          switch (swan_res.networkType) {
             case 'unknown':
               quick_res_type = 'others';
               break;
             default:
-              quick_res_type = wx_res.networkType;
+              quick_res_type = swan_res.networkType;
               break;
           }
           var quick_res = {
@@ -2030,20 +2027,20 @@ module.exports = {
     }
     var quick_callback = quick_object.callback;
     quick_object = null;
-    swan.onNetworkStatusChange(function (wx_res) {
+    swan.onNetworkStatusChange(function (swan_res) {
       var quick_res_type = void 0;
-      switch (wx_res.networkType) {
+      switch (swan_res.networkType) {
         case 'unknown':
           quick_res_type = 'others';
           break;
         default:
-          quick_res_type = wx_res.networkType;
+          quick_res_type = swan_res.networkType;
           break;
       }
       var quick_res = {
         type: quick_res_type,
         metered: false,
-        isConnected: wx_res.isConnected
+        isConnected: swan_res.isConnected
       };
       quick_callback(quick_res);
     });
@@ -2086,38 +2083,38 @@ module.exports = {
     quick_object = null;
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.getSystemInfo({
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            brand: wx_res.brand,
-            model: wx_res.model,
-            osVersionName: wx_res.system.split(' ')[0],
-            osVersionCode: wx_res.system.split(' ')[1],
-            pixelRatio: wx_res.pixelRatio,
-            language: wx_res.language,
-            screenWidth: wx_res.screenWidth,
-            screenHeight: wx_res.screenHeight,
-            windowWidth: wx_res.windowWidth,
-            windowHeight: wx_res.windowHeight,
-            statusBarHeight: wx_res.statusBarHeight,
-            vendorOsVersion: wx_res.version,
-            theme: wx_res.theme,
-            locationReducedAccuracy: wx_res.locationReducedAccuracy,
-            safeArea: wx_res.safeArea,
-            wifiEnabled: wx_res.wifiEnabled,
-            locationEnabled: wx_res.locationEnabled,
-            bluetoothEnabled: wx_res.bluetoothEnabled,
-            notificationSoundAuthorized: wx_res.notificationSoundAuthorized,
-            notificationBadgeAuthorized: wx_res.notificationBadgeAuthorized,
-            notificationAlertAuthorized: wx_res.notificationAlertAuthorized,
-            notificationAuthorized: wx_res.notificationAuthorized,
-            microphoneAuthorized: wx_res.microphoneAuthorized,
-            locationAuthorized: wx_res.locationAuthorized,
-            cameraAuthorized: wx_res.cameraAuthorized,
-            albumAuthorized: wx_res.albumAuthorized,
-            benchmarkLevel: wx_res.benchmarkLevel,
-            SDKVersion: wx_res.SDKVersion,
-            fontSizeSetting: wx_res.fontSizeSetting,
-            platform: wx_res.platform
+            brand: swan_res.brand,
+            model: swan_res.model,
+            osVersionName: swan_res.system.split(' ')[0],
+            osVersionCode: swan_res.system.split(' ')[1],
+            pixelRatio: swan_res.pixelRatio,
+            language: swan_res.language,
+            screenWidth: swan_res.screenWidth,
+            screenHeight: swan_res.screenHeight,
+            windowWidth: swan_res.windowWidth,
+            windowHeight: swan_res.windowHeight,
+            statusBarHeight: swan_res.statusBarHeight,
+            vendorOsVersion: swan_res.version,
+            theme: swan_res.theme,
+            locationReducedAccuracy: swan_res.locationReducedAccuracy,
+            safeArea: swan_res.safeArea,
+            wifiEnabled: swan_res.wifiEnabled,
+            locationEnabled: swan_res.locationEnabled,
+            bluetoothEnabled: swan_res.bluetoothEnabled,
+            notificationSoundAuthorized: swan_res.notificationSoundAuthorized,
+            notificationBadgeAuthorized: swan_res.notificationBadgeAuthorized,
+            notificationAlertAuthorized: swan_res.notificationAlertAuthorized,
+            notificationAuthorized: swan_res.notificationAuthorized,
+            microphoneAuthorized: swan_res.microphoneAuthorized,
+            locationAuthorized: swan_res.locationAuthorized,
+            cameraAuthorized: swan_res.cameraAuthorized,
+            albumAuthorized: swan_res.albumAuthorized,
+            benchmarkLevel: swan_res.benchmarkLevel,
+            SDKVersion: swan_res.SDKVersion,
+            fontSizeSetting: swan_res.fontSizeSetting,
+            platform: swan_res.platform
           };
           SUCCESS(quick_res);
         }
@@ -2219,13 +2216,13 @@ module.exports = {
     var quick_complete = quick_object.complete;
     var quick_value = quick_object.value;
     quick_object = null;
-    var wx_object = {
+    var swan_object = {
       value: quick_value / 2.25,
       success: quick_success,
       fail: quick_fail,
       complete: quick_complete
     };
-    return swan.setScreenBrightness(wx_object);
+    return swan.setScreenBrightness(swan_object);
   },
 
   /*
@@ -2242,9 +2239,9 @@ module.exports = {
     quick_object = null;
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.getScreenBrightness({
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            value: wx_res.value * 2.25
+            value: swan_res.value * 2.25
           };
           SUCCESS(quick_res);
         }
@@ -2304,10 +2301,10 @@ module.exports = {
     quick_object = null;
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.getBatteryInfo({
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            charging: wx_res.isCharging,
-            level: wx_res.level / 100
+            charging: swan_res.isCharging,
+            level: swan_res.level / 100
           };
           SUCCESS(quick_res);
         }
@@ -2359,12 +2356,12 @@ module.exports = {
     quick_object = null;
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.getConnectedWifi({
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            SSID: wx_res.wifi.SSID,
-            BSSID: wx_res.wifi.BSSID,
-            secure: wx_res.wifi.secure,
-            signalStrength: wx_res.wifi.signalStrength
+            SSID: swan_res.wifi.SSID,
+            BSSID: swan_res.wifi.BSSID,
+            secure: swan_res.wifi.secure,
+            signalStrength: swan_res.wifi.signalStrength
           };
           SUCCESS(quick_res);
         }
@@ -2381,19 +2378,19 @@ module.exports = {
   /** wifi.onstatechanged */
   set onstatechanged(callback) {
     swan.startWifi();
-    swan.onWifiConnected(function (wx_res) {
+    swan.onWifiConnected(function (swan_res) {
       var state = void 0;
-      if (wx_res.wifi.secure) {
+      if (swan_res.wifi.secure) {
         state = 1;
       } else {
         state = 0;
       }
       var quick_res = {
         state: state,
-        SSID: wx_res.wifi.SSID,
-        BSSID: wx_res.wifi.BSSID,
-        secure: wx_res.wifi.secure,
-        signalStrength: wx_res.wifi.signalStrength
+        SSID: swan_res.wifi.SSID,
+        BSSID: swan_res.wifi.BSSID,
+        secure: swan_res.wifi.secure,
+        signalStrength: swan_res.wifi.signalStrength
       };
       callback(quick_res);
     });
@@ -2425,7 +2422,7 @@ module.exports = {
     var quick_encodeBitRate = quick_object.encodeBitRate || 48000;
     var quick_format = quick_object.format || 'aac';
     quick_object = null;
-    var wx_object = {
+    var swan_object = {
       duration: quick_duration,
       sampleRate: quick_sampleRate,
       numberOfChannels: quick_numberOfChannels,
@@ -2436,7 +2433,7 @@ module.exports = {
       complete: quick_complete
     };
     var recorderManager = swan.getRecorderManager();
-    recorderManager.start(wx_object);
+    recorderManager.start(swan_object);
   },
 
   /** record.stop */
@@ -2633,9 +2630,9 @@ module.exports = {
     var CameraContext = swan.createCameraContext();
     (0, _PROMISE2.default)(function (SUCCESS) {
       CameraContext.takePhoto({
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            uri: wx_res.tempImagePath
+            uri: swan_res.tempImagePath
           };
           SUCCESS(quick_res);
         }
@@ -2652,13 +2649,13 @@ module.exports = {
     // const quick_cancel = quick_object.cancel
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.chooseVideo({
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            uri: wx_res.tempFilePath,
-            size: wx_res.size,
-            duration: wx_res.duration,
-            height: wx_res.height,
-            width: wx_res.width
+            uri: swan_res.tempFilePath,
+            size: swan_res.size,
+            duration: swan_res.duration,
+            height: swan_res.height,
+            width: swan_res.width
           };
           SUCCESS(quick_res);
         }
@@ -2677,11 +2674,11 @@ module.exports = {
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.chooseImage({
         count: 1,
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            tempFilePaths: wx_res.tempFilePaths,
-            uri: wx_res.tempFiles[0].path,
-            size: wx_res.tempFiles[0].size
+            tempFilePaths: swan_res.tempFilePaths,
+            uri: swan_res.tempFiles[0].path,
+            size: swan_res.tempFiles[0].size
           };
           SUCCESS(quick_res);
         }
@@ -2699,15 +2696,15 @@ module.exports = {
     // const quick_cancel = quick_object.cancel
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.chooseImage({
-        success: function success(wx_res) {
-          var quick_files = wx_res.tempFiles.map(function (file) {
+        success: function success(swan_res) {
+          var quick_files = swan_res.tempFiles.map(function (file) {
             return {
               uri: file.path,
               size: file.size
             };
           });
           var quick_res = {
-            uris: wx_res.tempFilePaths,
+            uris: swan_res.tempFilePaths,
             files: quick_files
           };
           SUCCESS(quick_res);
@@ -2726,13 +2723,13 @@ module.exports = {
     // const quick_cancel = quick_object.cancel
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.chooseVideo({
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            uri: wx_res.tempFilePath,
-            size: wx_res.size,
-            duration: wx_res.duration,
-            height: wx_res.height,
-            width: wx_res.width
+            uri: swan_res.tempFilePath,
+            size: swan_res.size,
+            duration: swan_res.duration,
+            height: swan_res.height,
+            width: swan_res.width
           };
           SUCCESS(quick_res);
         }
@@ -2751,8 +2748,8 @@ module.exports = {
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.chooseMedia({
         mediaType: ['video'],
-        success: function success(wx_res) {
-          var quick_files = wx_res.tempFiles.map(function (file) {
+        success: function success(swan_res) {
+          var quick_files = swan_res.tempFiles.map(function (file) {
             return {
               uri: file.tempFilePath,
               size: file.size,
@@ -2763,7 +2760,7 @@ module.exports = {
             };
           });
           var quick_uris = [];
-          for (var _iterator = wx_res.tempFiles, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
+          for (var _iterator = swan_res.tempFiles, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
             var _ref;
 
             if (_isArray) {
@@ -2782,7 +2779,7 @@ module.exports = {
           var quick_res = {
             uris: quick_uris,
             files: quick_files,
-            type: wx_res.type
+            type: swan_res.type
           };
           SUCCESS(quick_res);
         }
@@ -2804,12 +2801,12 @@ module.exports = {
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.chooseMessageFile({
         count: 1,
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            tempFiles: wx_res.tempFiles,
-            uri: wx_res.tempFiles[0].path,
-            size: wx_res.tempFiles[0].size,
-            name: wx_res.tempFiles[0].name
+            tempFiles: swan_res.tempFiles,
+            uri: swan_res.tempFiles[0].path,
+            size: swan_res.tempFiles[0].size,
+            name: swan_res.tempFiles[0].name
           };
           SUCCESS(quick_res);
         }
@@ -2828,13 +2825,13 @@ module.exports = {
     var quick_complete = quick_object.complete;
     var quick_uri = quick_object.uri;
     quick_object = null;
-    var wx_object = {
+    var swan_object = {
       filePath: quick_uri,
       success: quick_success,
       fail: quick_fail,
       complete: quick_complete
     };
-    swan.saveImageToPhotosAlbum(wx_object);
+    swan.saveImageToPhotosAlbum(swan_object);
   },
 
 
@@ -2847,14 +2844,14 @@ module.exports = {
     var quick_current = quick_object.current || 0;
     // const quick_cancel = quick_object.cancel
     quick_object = null;
-    var wx_object = {
+    var swan_object = {
       urls: quick_uris,
       current: quick_current,
       success: quick_success,
       fail: quick_fail,
       complete: quick_complete
     };
-    swan.previewImage(wx_object);
+    swan.previewImage(swan_object);
   },
 
   /** media.getRingtone */
@@ -2894,13 +2891,13 @@ module.exports = {
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.getImageInfo({
         src: quick_uri,
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            uri: wx_res.path,
-            width: wx_res.width,
-            height: wx_res.height,
-            orientation: wx_res.orientation,
-            type: wx_res.type
+            uri: swan_res.path,
+            width: swan_res.width,
+            height: swan_res.height,
+            orientation: swan_res.orientation,
+            type: swan_res.type
           };
           SUCCESS(quick_res);
         }
@@ -2918,9 +2915,9 @@ module.exports = {
       swan.compressImage({
         src: quick_uri,
         quality: quick_quality,
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            uri: wx_res.tempFilePath
+            uri: swan_res.tempFilePath
           };
           SUCCESS(quick_res);
         }
@@ -3142,10 +3139,10 @@ var Video = function () {
         bitrate: quick_bitrate,
         fps: quick_framerate,
         resolution: 0.5,
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
-            uri: wx_res.tempFilePath,
-            size: wx_res.size
+            uri: swan_res.tempFilePath,
+            size: swan_res.size
           };
           SUCCESS(quick_res);
         },
@@ -3165,17 +3162,17 @@ var Video = function () {
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.getVideoInfo({
         src: quick_uri,
-        success: function success(wx_res) {
+        success: function success(swan_res) {
           var quick_res = {
             uri: quick_uri,
-            size: wx_res.size,
-            height: wx_res.height,
-            width: wx_res.width,
-            bitrate: wx_res.bitrate,
-            framerate: wx_res.fps,
-            orientation: wx_res.orientation,
-            type: wx_res.type,
-            duration: wx_res.duration
+            size: swan_res.size,
+            height: swan_res.height,
+            width: swan_res.width,
+            bitrate: swan_res.bitrate,
+            framerate: swan_res.fps,
+            orientation: swan_res.orientation,
+            type: swan_res.type,
+            duration: swan_res.duration
           };
           SUCCESS(quick_res);
         },
@@ -3196,143 +3193,6 @@ exports.default = Video;
 /***/ (function(module, exports) {
 
 module.exports = require("oneutil/PROMISE");
-
-/***/ }),
-/* 66 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _PROMISE = __webpack_require__(0);
-
-var _PROMISE2 = _interopRequireDefault(_PROMISE);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var plugin = requirePlugin('myPlugin'); /* eslint-disable no-undef */
-/* eslint-disable no-console */
-/* eslint-disable camelcase */
-
-
-module.exports = {
-  speak: function speak(quick_object) {
-    var InnerAudioContext = swan.createInnerAudioContext();
-    this.innerAudioContext = InnerAudioContext;
-    getApp().onekit_speak = 'play';
-    if (!quick_object) {
-      return;
-    }
-    var quick_lang = quick_object.lang;
-    var quick_content = quick_object.content;
-    var quick_rate = quick_object.rate || 1;
-    var quick_pitch = quick_object.pitch || 1;
-    var quick_success = quick_object.success;
-    var quick_fail = quick_object.fail;
-    var quick_complete = quick_object.complete;
-    quick_object = null;
-    (0, _PROMISE2.default)(function (SUCCESS) {
-      plugin.textToSpeech({
-        lang: quick_lang,
-        content: quick_content,
-        success: function success(wx_res) {
-          InnerAudioContext.src = wx_res.filename;
-          InnerAudioContext.volume = quick_pitch;
-          InnerAudioContext.playbackRate = quick_rate;
-          InnerAudioContext.play();
-          var quick_res = {
-            utteranceId: wx_res.retcode.toString(),
-            origin: wx_res.origin,
-            filename: wx_res.filename,
-            expired_time: wx_res.expired_time
-          };
-          SUCCESS(quick_res);
-        },
-        fail: function fail(res) {
-          console.log(res);
-        }
-      });
-    }, quick_success, quick_fail, quick_complete);
-  },
-  textToAudioFile: function textToAudioFile(quick_object) {
-    getApp().onekit_textToAudioFile = 'done';
-    if (!quick_object) {
-      return;
-    }
-    var quick_lang = quick_object.lang;
-    var quick_content = quick_object.content;
-    var quick_success = quick_object.success;
-    var quick_fail = quick_object.fail;
-    var quick_complete = quick_object.complete;
-    quick_object = null;
-    (0, _PROMISE2.default)(function (SUCCESS) {
-      plugin.textToSpeech({
-        lang: quick_lang,
-        content: quick_content,
-        success: function success(wx_res) {
-          var quick_res = {
-            utteranceId: wx_res.retcode.toString(),
-            origin: wx_res.origin,
-            filePath: wx_res.filename,
-            expired_time: wx_res.expired_time
-          };
-          SUCCESS(quick_res);
-        },
-        fail: function fail(res) {
-          console.log(res);
-        }
-      });
-    }, quick_success, quick_fail, quick_complete);
-  },
-  isLanguageAvailable: function isLanguageAvailable(quick_object) {
-    var quick_lang = quick_object.lang;
-    var quick_success = quick_object.success;
-    var quick_res = void 0;
-    if (quick_lang === 'zh_CN' || quick_lang === 'en_US') {
-      quick_res = {
-        isAvailable: true
-      };
-    } else {
-      quick_res = {
-        isAvailable: false
-      };
-    }
-    quick_success(quick_res);
-  },
-
-  set onttsstatechange(callback) {
-    var state = void 0;
-    switch (getApp().onekit_speak) {
-      case 'play':
-        state = 'onStart';
-        break;
-      case 'done':
-        state = 'onDone';
-        break;
-      case 'stop':
-        state = 'onStop';
-        break;
-      default:
-        state = 'onError';
-    }
-    var quick_res = {
-      state: state
-    };
-    callback(quick_res);
-  },
-  stop: function stop() {
-    getApp().onekit_speak = 'stop';
-    if (!this.innerAudioContext) return;
-    this.innerAudioContext.stop();
-  },
-  isSpeaking: function isSpeaking() {
-    if (getApp().onekit_speak === 'stop') {
-      return false;
-    } else {
-      return true;
-    }
-  }
-};
 
 /***/ })
 /******/ ]);

@@ -68,9 +68,9 @@ module.exports = {
     PROMISE((SUCCESS) => {
       FileSystemManager.readdir({
         dirPath: quick_uri,
-        success: (wx_res) => {
+        success: (swan_res) => {
           const quick_res = {
-            fileList: wx_res.files
+            fileList: swan_res.files
           }
           SUCCESS(quick_res)
         }
@@ -92,9 +92,9 @@ module.exports = {
     PROMISE((SUCCESS) => {
       FileSystemManager.getFileInfo({
         filePath: quick_uri,
-        success: (wx_res) => {
+        success: (swan_res) => {
           const quick_res = {
-            length: wx_res.size,
+            length: swan_res.size,
             lastModifiedTime: new Date().getTime(),
           }
           SUCCESS(quick_res)
@@ -113,13 +113,13 @@ module.exports = {
     const quick_complete = quick_object.complete
     const quick_uri = quick_object.uri
     quick_object = null
-    const wx_object = {
+    const swan_object = {
       filePath: quick_uri,
       success: quick_success,
       fail: quick_fail,
       complete: quick_complete,
     }
-    return swan.getFileSystemManager().unlink(wx_object)
+    return swan.getFileSystemManager().unlink(swan_object)
   },
   /** file.writeText */
 
@@ -198,9 +198,9 @@ module.exports = {
       FileSystemManager.readFile({
         filePath: quick_uri,
         encoding: quick_encoding,
-        success: (wx_res) => {
+        success: (swan_res) => {
           const quick_res = {
-            text: wx_res.data
+            text: swan_res.data
           }
           SUCCESS(quick_res)
         },
@@ -222,9 +222,9 @@ module.exports = {
     PROMISE((SUCCESS) => {
       FileSystemManager.readFile({
         filePath: quick_uri,
-        success: (wx_res) => {
+        success: (swan_res) => {
           const quick_res = {
-            buffer: wx_res.data
+            buffer: swan_res.data
           }
           SUCCESS(quick_res)
         }

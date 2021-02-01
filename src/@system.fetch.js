@@ -23,13 +23,13 @@ module.exports = {
         header: quick_header,
         method: quick_method,
         responseType: quick_responseType,
-        success: wx_res => {
+        success: swan_res => {
           const quick_res = {
-            code: wx_res.statusCode,
-            data: wx_res.data,
-            headers: wx_res.header,
-            cookies: wx_res.cookies,
-            profile: wx_res.profile
+            code: swan_res.statusCode,
+            data: swan_res.data,
+            headers: swan_res.header,
+            cookies: swan_res.cookies,
+            profile: swan_res.profile
           }
           SUCCESS(quick_res)
         }

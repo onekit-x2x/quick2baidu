@@ -12,16 +12,16 @@ module.exports = {
     const quick_fail = quick_object.fail
     const quick_complete = quick_object.complete
     quick_object = null
-    const wx_object = {
+    const swan_object = {
       type: 'medium',
       success: quick_success,
       fail: quick_fail,
       complete: quick_complete,
     }
     if (quick_mode === 'short') {
-      return swan.vibrateShort(wx_object)
+      return swan.vibrateShort(swan_object)
     } else {
-      return swan.vibrateLong(wx_object)
+      return swan.vibrateLong(swan_object)
     }
   }
 }

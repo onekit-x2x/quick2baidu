@@ -7,7 +7,7 @@ module.exports = {
     const quick_url = quick_object.url
     quick_object = null
     swan.navigateTo({
-      url: `/quickapp2weixin/page/router.push/ie?url=${encodeURI(quick_url)}`
+      url: `/quickapp2baidu/page/router.push/ie?url=${encodeURI(quick_url)}`
     })
   }
 }

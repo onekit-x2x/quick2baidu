@@ -15,13 +15,13 @@ module.exports = {
     const quick_complete = quick_object.complete
     const quick_value = quick_object.value
     quick_object = null
-    const wx_object = {
+    const swan_object = {
       value: quick_value / 2.25,
       success: quick_success,
       fail: quick_fail,
       complete: quick_complete,
     }
-    return swan.setScreenBrightness(wx_object)
+    return swan.setScreenBrightness(swan_object)
   },
   /*
   brightness.getValue
@@ -37,9 +37,9 @@ module.exports = {
     quick_object = null
     PROMISE((SUCCESS) => {
       swan.getScreenBrightness({
-        success: (wx_res) => {
+        success: (swan_res) => {
           const quick_res = {
-            value: wx_res.value * 2.25
+            value: swan_res.value * 2.25
           }
           SUCCESS(quick_res)
         }

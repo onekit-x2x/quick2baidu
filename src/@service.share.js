@@ -22,52 +22,52 @@ module.exports = {
     const quick_fail = quick_object.fail
     const quick_cancel = quick_object.cancel
     // ////////////////////////////////////////
-    const wx_object = {}
+    const swan_object = {}
     if (quick_platforms) {
       const quick_temp = []
       for (const platforms of quick_platforms) {
         console.log(platforms)
-        if (['WEIXIN_CIRCLE', 'WEIBO', 'QQ', 'SYSTEM'].indexOf(platforms) > 0) {
+        if (['baidu_CIRCLE', 'WEIBO', 'QQ', 'SYSTEM'].indexOf(platforms) > 0) {
           quick_temp.push(platforms)
         }
       }
 
       if (quick_temp.lenght > 0) {
-        console.warn("[quick2weixin] only support 'WEIXIN'")
+        console.warn("[quick2baidu] only support 'baidu'")
       }
     }
 
     const flag = [0, 2].indexOf(quick_shareType)
     if (flag === 0) {
       // 图文类型
-      wx_object.title = quick_title
+      swan_object.title = quick_title
       if (quick_imagePath) {
-        wx_object.imageUrl = quick_imagePath
+        swan_object.imageUrl = quick_imagePath
       }
     } else if (flag === 1) {
       // 纯图片
-      wx_object.imageUrl = quick_imagePath
+      swan_object.imageUrl = quick_imagePath
     } else {
       // 其它类型暂不支持
       if (quick_fail) {
-        quick_fail("[quick2weixin] only support 'quick_shareType: 0 or 2'", 203)
+        quick_fail("[quick2baidu] only support 'quick_shareType: 0 or 2'", 203)
       }
       return
     }
-    const wx_callback = {}
+    const swan_callback = {}
     if (quick_success) {
-      wx_callback.success = quick_success
+      swan_callback.success = quick_success
     }
     if (quick_fail) {
-      wx_callback.fail = quick_fail
+      swan_callback.fail = quick_fail
     }
     if (quick_cancel) {
-      wx_callback.cancel = quick_cancel
+      swan_callback.cancel = quick_cancel
     }
 
     swan.navigateTo({
-      url: `/onekit/page/share.share/share.share?param=${JSON.stringify(wx_object)}`,
-      events: wx_callback,
+      url: `/onekit/page/share.share/share.share?param=${JSON.stringify(swan_object)}`,
+      events: swan_callback,
     })
   },
 
@@ -80,7 +80,7 @@ module.exports = {
     // const quick_fail = quick_object.fail
     const quick_complete = quick_object.complete
     // //////////////////////////////////////
-    const result = ['WEIXIN'] // , "WEIXIN_CIRCLE"
+    const result = ['baidu'] // , "baidu_CIRCLE"
     if (quick_success) {
       quick_success({
         platforms: result

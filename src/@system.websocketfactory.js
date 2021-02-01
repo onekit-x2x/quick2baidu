@@ -11,14 +11,14 @@ module.exports = {
     // const protocols = quick_object.protocols
     // // /////////////////////////////////////////
     // const DATA = ['HTTPS', 'HTTP']
-    // const wx_object = {
+    // const swan_object = {
     //   url,
     //   header,
     //   protocols: []
     // }
     // for (const protocol of protocols) {
     //   if (DATA.indexOf(protocol.toLowerCase()) >= 0) {
-    //     wx_object.protocols.push(protocol)
+    //     swan_object.protocols.push(protocol)
     //   }
     // }
     const socket = swan.connectSocket(quick_object)

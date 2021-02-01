@@ -63,8 +63,8 @@ module.exports = {
     PROMISE((SUCCESS) => {
       swan.getStorage({
         key: quick_key,
-        success: (wx_res) => {
-          const quick_res = wx_res.data
+        success: (swan_res) => {
+          const quick_res = swan_res.data
           SUCCESS(quick_res)
         },
         fail: () => {
@@ -126,9 +126,9 @@ module.exports = {
     quick_object = null
     PROMISE((SUCCESS) => {
       swan.getStorageInfo({
-        success: (wx_res) => {
+        success: (swan_res) => {
           const quick_res =
-            wx_res.keys[quick_index]
+            swan_res.keys[quick_index]
           SUCCESS(quick_res)
         }
       })
