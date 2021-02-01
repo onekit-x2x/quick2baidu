@@ -1,8 +1,8 @@
 {
     "pages": [
         "zeng/zeng",
-        "wang/wang",
-        "quickapp2baidu/page/router.push/ie"
+        "wang/wang"
+
     ],
     "window": {
         "backgroundColor": "#f8f8f8",

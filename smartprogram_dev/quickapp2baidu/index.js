@@ -797,7 +797,8 @@ module.exports = {
     quick_object = null;
     (0, _PROMISE2.default)(function (SUCCESS) {
       (0, _TASK2.default)(quick_files, function (quick_file, callback) {
-        var filePath = quick_file.uri;
+        var filePath = 'bdfile://tmp' + quick_file.uri.substring(10);
+        console.log(filePath);
         var name = quick_file.name;
         swan.uploadFile({
           url: quick_url,
@@ -834,12 +835,14 @@ module.exports = {
     var quick_complete = quick_object.complete;
     var quick_url = quick_object.url;
     var filename = quick_object.filename || quick_url.substring(quick_url.lastIndexOf('/') + 1);
-    var filePath = swan.env.USER_DATA_PATH + '/' + filename;
+    var filePath = 'bdfile://tmp/' + filename;
     quick_object = null;
     var swan_object = {
       url: quick_url,
       filePath: filePath
     };
+    var DownloadTask = swan.downloadFile(swan_object);
+    this.DownloadTask = DownloadTask;
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.downloadFile({
         url: quick_url,
@@ -847,33 +850,33 @@ module.exports = {
         success: function success(swan_res) {
           var token = '' + new Date().getTime();
           var quick_res = {
-            tempFilePath: swan_res.tempFilePath,
             filePath: swan_res.filePath,
             statusCode: swan_res.statusCode,
-            profile: swan_res.profile,
             token: token
           };
           SUCCESS(quick_res);
         }
       });
     }, quick_success, quick_fail, quick_complete);
-    getApp().onekit_DownloadTask = swan.downloadFile(swan_object);
-    getApp().onekit_url = quick_url;
+    this.quick_url = quick_url;
   },
 
   /** onDownloadComplete */
 
   onDownloadComplete: function onDownloadComplete(quick_object) {
+    var _this = this;
+
     if (!quick_object) {
       return;
     }
     var quick_success = quick_object.success;
-    if (getApp().onekit_DownloadTask) {
-      var DownloadTask = getApp().onekit_DownloadTask;
-      DownloadTask.onProgressUpdate(function (swan_res) {
-        if (swan_res.progress === 100) {
+    quick_success(this.DownloadTask.onProgressUpdate(function () {}));
+    if (this.DownloadTask) {
+      this.DownloadTask.onProgressUpdate(function (swan_res) {
+        console.log(swan_res);
+        if (swan_res.progress === '100') {
           quick_success({
-            uri: getApp().onekit_url
+            uri: _this.quick_url
           });
         }
       });

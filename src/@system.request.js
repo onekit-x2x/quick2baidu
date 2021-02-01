@@ -20,7 +20,8 @@ module.exports = {
     quick_object = null
     PROMISE((SUCCESS) => {
       TASK(quick_files, (quick_file, callback) => {
-        const filePath = quick_file.uri
+        const filePath = 'bdfile://tmp' + quick_file.uri.substring(10)
+        console.log(filePath)
         const name = quick_file.name
         swan.uploadFile({
           url: quick_url,
@@ -56,12 +57,14 @@ module.exports = {
     const quick_complete = quick_object.complete
     const quick_url = quick_object.url
     const filename = quick_object.filename || quick_url.substring(quick_url.lastIndexOf('/') + 1)
-    const filePath = swan.env.USER_DATA_PATH + '/' + filename
+    const filePath = 'bdfile://tmp/' + filename
     quick_object = null
     const swan_object = {
       url: quick_url,
       filePath,
     }
+    const DownloadTask = swan.downloadFile(swan_object)
+    this.DownloadTask = DownloadTask
     PROMISE((SUCCESS) => {
       swan.downloadFile({
         url: quick_url,
@@ -69,18 +72,15 @@ module.exports = {
         success: swan_res => {
           const token = '' + new Date().getTime()
           const quick_res = {
-            tempFilePath: swan_res.tempFilePath,
             filePath: swan_res.filePath,
             statusCode: swan_res.statusCode,
-            profile: swan_res.profile,
             token
           }
           SUCCESS(quick_res)
         }
       })
     }, quick_success, quick_fail, quick_complete)
-    getApp().onekit_DownloadTask = swan.downloadFile(swan_object)
-    getApp().onekit_url = quick_url
+    this.quick_url = quick_url
   },
   /** onDownloadComplete */
 
@@ -89,12 +89,12 @@ module.exports = {
       return
     }
     const quick_success = quick_object.success
-    if (getApp().onekit_DownloadTask) {
-      const DownloadTask = getApp().onekit_DownloadTask
-      DownloadTask.onProgressUpdate(swan_res => {
-        if (swan_res.progress === 100) {
+    if (this.DownloadTask) {
+      this.DownloadTask.onProgressUpdate(swan_res => {
+        console.log(swan_res)
+        if (swan_res.progress === '100') {
           quick_success({
-            uri: getApp().onekit_url
+            uri: this.quick_url
           })
         }
       })
