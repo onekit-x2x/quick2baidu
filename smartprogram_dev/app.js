@@ -1,6 +1,9 @@
 import {
   OnekitApp
 } from './quickapp2baidu/index';
+import {
+  swan
+} from './quickapp2baidu/index';
 App({
   onLaunch: function () {
     console.log('App Launch');

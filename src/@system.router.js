@@ -101,7 +101,7 @@ module.exports = {
   /** router.back */
 
   back(quick_object) {
-    const quick_path = quick_object.path
+    const quick_path = quick_object.path || ''
     if (!quick_path) {
       swan.navigateBack({})
     } else if (quick_path.startsWith('/')) {

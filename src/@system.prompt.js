@@ -35,7 +35,6 @@ module.exports = {
     const quick_success = quick_object.success
     const quick_fail = quick_object.fail
     const quick_complete = quick_object.complete
-    console.log(quick_buttons.length, '...........')
     quick_object = null
     if (quick_buttons.length === 1) {
       const confirmText = quick_buttons[0].text

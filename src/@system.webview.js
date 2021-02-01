@@ -9,5 +9,6 @@ module.exports = {
     swan.navigateTo({
       url: `/quickapp2baidu/page/router.push/ie?url=${encodeURI(quick_url)}`
     })
-  }
+  },
+
 }

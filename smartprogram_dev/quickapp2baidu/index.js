@@ -237,7 +237,7 @@ module.exports = {
   /** router.back */
 
   back: function back(quick_object) {
-    var quick_path = quick_object.path;
+    var quick_path = quick_object.path || '';
     if (!quick_path) {
       swan.navigateBack({});
     } else if (quick_path.startsWith('/')) {
@@ -606,14 +606,11 @@ module.exports = {
     };
     return quick_res;
   },
-  setLocale: function setLocale() {},
+  setLocale: function setLocale() {
+    return console.warn('setLocale is not support');
+  },
   getThemeMode: function getThemeMode() {
-    var swan_res = swan.getSystemInfoSync();
-    if (swan_res.theme === 'light') {
-      return 0;
-    } else {
-      return 1;
-    }
+    return console.warn('getThemeMode is not support');
   }
 };
 
@@ -659,7 +656,6 @@ module.exports = {
     var quick_success = quick_object.success;
     var quick_fail = quick_object.fail;
     var quick_complete = quick_object.complete;
-    console.log(quick_buttons.length, '...........');
     quick_object = null;
     if (quick_buttons.length === 1) {
       var confirmText = quick_buttons[0].text;

@@ -12,15 +12,10 @@ module.exports = {
     return quick_res
   },
   setLocale() {
-
+    return console.warn('setLocale is not support')
   },
   getThemeMode() {
-    const swan_res = swan.getSystemInfoSync()
-    if (swan_res.theme === 'light') {
-      return 0
-    } else {
-      return 1
-    }
+    return console.warn('getThemeMode is not support')
   }
 
 }
