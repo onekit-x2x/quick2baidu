@@ -1,8 +1,0 @@
-<view class='marquee_container'>
-  <view
-  class='marquee_text onekit-marquee {{onekitClass}}'
-  style='{{direction}}:{{ marqueeDistance }}px;font-size:{{size}}px;{{onekitStyle}}'
-  >
-  {{text}}
-  </view>
-</view>

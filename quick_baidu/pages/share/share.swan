@@ -1,6 +1,0 @@
-<view >
-    <view >
-        <button bindtap="shareText">分享文件</button>
-        <button bindtap="shareImage">分享图片</button>
-    </view>
-</view>

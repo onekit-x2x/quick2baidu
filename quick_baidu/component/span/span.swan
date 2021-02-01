@@ -1,8 +1,0 @@
-
-<onekit-span>I am onekit-span,</onekit-span>
-<onekit-span onekit-style="color: #f76160">I am onekit-span,</onekit-span>
-<onekit-span onekit-style="color: #f76160;text-decoration: underline;">I am onekit-span,</onekit-span>
-<onekit-span onekit-style="color: #f76160;text-decoration: line-through;">I am onekit-span,</onekit-span>
-<onekit-span onekit-style="color: #f76160;font-Style: italic;">I am onekit-span,</onekit-span>
-<onekit-span onekit-style="color: #f76160;font-weight: bold;">I am onekit-span,</onekit-span>
-<onekit-span onekit-style="color: #f76160;font-size: 50px;">I am onekit-span.</onekit-span>

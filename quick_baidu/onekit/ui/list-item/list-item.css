@@ -1,7 +1,0 @@
-/* components/recycle-item/recycle-item.css */
-:host {
-    display: inline-block;
-  }
-  .wx-recycle-item {
-    height: 100%;
-  }

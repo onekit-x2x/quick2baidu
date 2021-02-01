@@ -1,4 +1,0 @@
-<view class="container">
-    
-    <button bindtap="decompress">解压缩</button>
-</view>

@@ -1,0 +1,14 @@
+{
+    "pages": [
+        "li/li",
+        "zeng/zeng",
+        "wang/wang"
+
+    ],
+    "window": {
+        "backgroundColor": "#f8f8f8",
+        "navigationBarBackgroundColor": "#f8f8f8",
+        "navigationBarTitleText": "小程序能力",
+        "navigationBarTextStyle": "black"
+    }
+}

@@ -1,0 +1,503 @@
+<!-- <scroll-view> -->
+<!-- <view class="container">
+  <view class="page-body">
+    <view class="page-section">
+      <view class="page-section-title">
+        <onekit-text>Vertical Scroll\n纵向滚动</onekit-text>
+      </view>
+      <view class="page-section-spacing">
+        <onekit-scroll-view scroll-y="true" style="height: 300rpx;" onScrolltoupper="upper" onScrolltolower="lower" onScroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+          <view onekit-id="demo1" class="scroll-view-item demo-text-1"></view>
+          <view onekit-id="demo2" class="scroll-view-item demo-text-2"></view>
+          <view onekit-id="demo3" class="scroll-view-item demo-text-3"></view>
+        </onekit-scroll-view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="page-section-title">
+        <onekit-text>Horizontal Scroll\n横向滚动</onekit-text>
+      </view>
+      <view class="page-section-spacing">
+        <onekit-scroll-view class="scroll-view_H" scroll-x="true" onScroll="scroll" style="width: 100%">
+          <view onekit-id="demo1" class="scroll-view-item_H demo-text-1"></view>
+          <view onekit-id="demo2" class="scroll-view-item_H demo-text-2"></view>
+          <view onekit-id="demo3" class="scroll-view-item_H demo-text-3"></view>
+        </onekit-scroll-view>
+      </view>
+    </view>
+  </view>
+</view> -->
+
+<!-- <view> -->
+<!-- <view class="container">
+  <view class="page-body">
+    <view class="page-section">
+      <view class="page-section-title">
+        <onekit-text>flex-direction: row\n横向布局</onekit-text>
+      </view>
+      <view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item demo-text-1"></view>
+          <view class="flex-item demo-text-2"></view>
+          <view class="flex-item demo-text-3"></view>
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="page-section-title">
+        <onekit-text>flex-direction: column\n纵向布局</onekit-text>
+      </view>
+      <view class="flex-wrp" style="flex-direction:column;">
+        <view class="flex-item flex-item-V demo-text-1"></view>
+        <view class="flex-item flex-item-V demo-text-2"></view>
+        <view class="flex-item flex-item-V demo-text-3"></view>
+      </view>
+    </view>
+  </view>
+</view> -->
+
+<!-- <swiper> -->
+<!-- <view class="container">
+  <view class="page-body">
+    <view class="page-section page-section-spacing swiper">
+      <onekit-swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+        <block s-for="background">
+          <onekit-swiper-item>
+            <view class="swiper-item {{item}}"></view>
+          </onekit-swiper-item>
+        </block>
+      </onekit-swiper>
+    </view>
+    <view class="page-section" style="margin-top: 40rpx;margin-bottom: 0;">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">指示点</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{indicatorDots}}" bindChange="changeProperty" data-property-name="indicatorDots"></switch>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">自动播放</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{autoplay}}" bindChange="changeProperty" data-property-name="autoplay"></switch>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">衔接滑动</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{circular}}" bindChange="changeProperty" data-property-name="circular"></switch>
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">竖向</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{vertical}}" bindChange="changeProperty" data-property-name="vertical"></switch>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="page-section page-section-spacing">
+      <view class="page-section-title">
+        <onekit-text>幻灯片切换时长(ms)</onekit-text>
+        <onekit-text class="info">{{duration}}</onekit-text>
+      </view>
+      <slider value="{{duration}}" min="500" max="2000" bindChange="changeProperty" data-property-name="duration"></slider>
+      <view class="page-section-title">
+        <onekit-text>自动播放间隔时长(ms)</onekit-text>
+        <onekit-text class="info">{{interval}}</onekit-text>
+      </view>
+      <slider value="{{interval}}" min="2000" max="10000" bindChange="changeProperty" data-property-name="interval"></slider>
+      <view class="page-section-title">
+        <onekit-text>前边距(px)</onekit-text>
+        <onekit-text class="info">{{previousMargin}}</onekit-text>
+      </view>
+      <slider value="{{previousMargin}}" min="0" max="50" bindChange="changeProperty" data-property-name="previousMargin"></slider>
+      <view class="page-section-title">
+        <onekit-text>后边距(px)</onekit-text>
+        <onekit-text class="info">{{nextMargin}}</onekit-text>
+      </view>
+      <slider value="{{nextMargin}}" min="0" max="50" bindChange="changeProperty" data-property-name="nextMargin"></slider>
+    </view>
+  </view>
+</view> -->
+
+<!-- <progress> -->
+<!-- <onekit-progress percent="20" show-info></onekit-progress>
+<onekit-progress percent="40" stroke-width="12"></onekit-progress>
+<onekit-progress percent="60" color="pink"></onekit-progress>
+<onekit-progress percent="80" active bindactiveend="activeend"></onekit-progress> -->
+
+<!-- <rich-text> -->
+<!-- <view class="container">
+  <view class="page-body">
+    <view class="page-section">
+      <view class="page-section-title">通过HTML String渲染</view>
+      <view class="page-content">
+        <scroll-view scroll-y>{{htmlSnip}}</scroll-view>
+        <button style="margin: 30rpx 0" type="primary" bindtap="renderHtml">渲染HTML</button>
+        <block swan:if="{{renderedByHtml}}">
+          <onekit-rich-text nodes="{{htmlSnip}}"></onekit-rich-text>
+          <onekit-rich-text nodes="{{htmlSnip}}" space="emsp"></onekit-rich-text>
+          <onekit-rich-text nodes="{{htmlSnip}}" space="ensp"></onekit-rich-text>
+          <onekit-rich-text nodes="{{htmlSnip}}" space="nbsp"></onekit-rich-text>
+        </block>
+      </view>
+    </view>
+
+    <view class="page-section">
+      <view class="page-section-title">通过节点渲染</view>
+      <view class="page-content">
+        <scroll-view scroll-y>{{nodeSnip}}</scroll-view>
+        <button style="margin: 30rpx 0" type="primary" bindtap="renderNode">渲染Node</button>
+        <block swan:if="{{renderedByNode}}">
+          <onekit-rich-text nodes="{{nodes}}"></onekit-rich-text>
+        </block>
+      </view>
+    </view>
+  </view>
+</view> -->
+
+<!-- <text> -->
+<!-- <view class="container">
+  <view class="page-body">
+    <view class="page-section page-section-spacing">
+      <view class="text-box" scroll-y="true" scroll-top="{{scrollTop}}">
+        <onekit-text>{{text}}</onekit-text>
+      </view>
+      <button disabled="{{!canAdd}}" bindtap="add">add line</button>
+      <button disabled="{{!canRemove}}" bindtap="remove">remove line</button>
+    </view>
+  </view>
+</view> -->
+<!-- <onekit-text decode>&nbsp;</onekit-text>
+<onekit-text decode>&lt;</onekit-text>
+<onekit-text decode>&gt;</onekit-text>
+<onekit-text decode>&amp;</onekit-text>
+<onekit-text decode>&apos;</onekit-text>
+<onekit-text decode>&ensp;</onekit-text>
+<onekit-text decode>&emsp;</onekit-text> -->
+<!-- <onekit-text>hhhh</onekit-text>
+<onekit-text user-select>hhhh</onekit-text> -->
+
+<!-- <button> -->
+<!-- <view class="page-body">
+  <view class="btn-area" id="buttonContainer">
+    <onekit-button onekit-version="2" type="primary">页面主操作 Normal</onekit-button>
+    <onekit-button type="primary" loading="true">页面主操作 Loading</onekit-button>
+    <onekit-button type="primary" disabled="true">页面主操作 Disabled</onekit-button>
+
+    <onekit-button type="default">页面次要操作 Normal</onekit-button>
+    <onekit-button type="default" disabled="true">页面次要操作 Disabled</onekit-button>
+
+    <onekit-button type="warn">警告类操作 Normal</onekit-button>
+    <onekit-button type="warn" disabled="true">警告类操作 Disabled</onekit-button>
+
+    <view class="onekit-button-sp-area">
+      <onekit-button type="primary" plain="true">按钮</onekit-button>
+      <onekit-button type="primary" disabled="true" plain="true">不可点击的按钮</onekit-button>
+
+      <onekit-button type="default" plain="true">按钮</onekit-button>
+      <onekit-button type="default" disabled="true" plain="true">按钮</onekit-button>
+
+      <onekit-button class="mini-btn" type="primary" size="mini">按钮</onekit-button>
+      <onekit-button class="mini-btn" type="default" size="mini">按钮</onekit-button>
+      <onekit-button class="mini-btn" type="warn" size="mini">按钮</onekit-button>
+    </view>
+  </view>
+</view> -->
+
+<!-- <onekit-input> -->
+<!-- <view class="page-body">
+  <view class="page-section">
+    <view class="weui-cells__title">可以自动聚焦的input</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <onekit-input  auto-focus placeholder="将会获取焦点"/>
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="weui-cells__title">控制最大输入长度的input</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <onekit-input  maxlength="10" placeholder="最大输入长度为10" />
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="weui-cells__title">实时获取输入值：{{inputValue}}</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <onekit-input   maxlength="10" bindInput="bindKeyInput" placeholder="输入同步到view中"/>
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="weui-cells__title">控制输入的input</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <onekit-input   bindinput="bindReplaceInput" placeholder="连续的两个1会变成2" />
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="weui-cells__title">控制键盘的input</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <onekit-input   bindinput="bindHideKeyboard" placeholder="输入123自动收起键盘" />
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="weui-cells__title">数字输入的input</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <onekit-input  type="number" placeholder="这是一个数字输入框" />
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="weui-cells__title">密码输入的input</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <onekit-input  password type="text" placeholder="这是一个密码输入框" />
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="weui-cells__title">带小数点的input</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <onekit-input  type="digit" placeholder="带小数点的数字键盘"/>
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="weui-cells__title">身份证输入的input</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <onekit-input  type="idcard" placeholder="身份证输入键盘" />
+      </view>
+    </view>
+  </view>
+  <view class="page-section">
+    <view class="weui-cells__title">控制占位符颜色的input</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+        <onekit-input  placeholder-style="color:#F76260" placeholder="占位符字体是红色的" />
+      </view>
+    </view>
+  </view>
+</view> -->
+<!-- <onekit-input placeholder="hhh" hold-keyboard/>
+<onekit-input placeholder="xxx"/> -->
+
+<!-- <picker> -->
+<!-- <onekit-picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+  <view class="picker">
+    当前选择：{{array[index]}}
+  </view>
+</onekit-picker>
+<onekit-picker header-text="hhhh" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+  <view class="picker">
+    当前选择：{{array[index]}}
+  </view>
+</onekit-picker> -->
+<!-- <view class="section">
+  <view class="section__title">普通选择器</view>
+  <onekit-picker bindChange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前选择：{{array[index]}}
+    </view>
+  </onekit-picker>
+</view>
+<view class="section">
+  <view class="section__title">多列选择器</view>
+   <onekit-picker mode="multiSelector" bindChange="bindMultiPickerChange" bindColumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+    </view>
+  </onekit-picker>
+</view>
+<view class="section">
+  <view class="section__title">时间选择器</view>
+  <onekit-picker mode="time" value="{{time}}" start="09:01" end="21:01" bindChange="bindTimeChange">
+    <view class="picker">
+      当前选择: {{time}}
+    </view>
+  </onekit-picker>
+</view>
+
+<view class="section">
+  <view class="section__title">日期选择器</view>
+  <onekit-picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindChange="bindDateChange">
+    <view class="picker">
+      当前选择: {{date}}
+    </view>
+  </onekit-picker>
+</view>
+<view class="section">
+  <view class="section__title">省市区选择器</view>
+  <onekit-picker mode="region" bindChange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <view class="picker">
+      当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
+    </view>
+  </onekit-picker>
+</view> -->
+
+<!-- <picker-view> -->
+<!-- <view class="container">
+  <view class="page-body">
+    <view class="selected-date">{{year}}年{{month}}月{{day}}日{{isDaytime ? "白天" : "夜晚"}}</view>
+    <onekit-picker-view indicator-style="height: 50px;"
+                        onekit-style="width: 100%; height: 300px;"
+                        value="{{value}}"
+                        bindChange="bindChange"
+                        bindPickstart="bindStart"
+                        bindPickend="bindEnd">
+      <picker-view-column>
+        <view s-for="years" s-key="years" style="line-height: 50px; text-align: center;">{{item}}年</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view s-for="months" s-key="months" style="line-height: 50px; text-align: center;">{{item}}月</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view s-for="days" s-key="days" style="line-height: 50px; text-align: center;">{{item}}日</view>
+      </picker-view-column>
+    </onekit-picker-view>
+  </view>
+</view> -->
+
+<!-- <slider> -->
+<!-- <view class="page">
+    <view class="page__hd">
+        <onekit-text onekit-class="page__title">slider</onekit-text>
+        <onekit-text onekit-class="page__desc">滑块</onekit-text>
+    </view>
+    <view class="page__bd">
+        <view class="section section_gap">
+            <onekit-text onekit-class="section__title">设置left/right icon</onekit-text>
+            <view class="body-view">
+                <onekit-slider bindChange="slider1change" left-icon="cancel" right-icon="success_no_circle"/>
+            </view>
+        </view>
+
+        <view class="section section_gap">
+            <onekit-text onekit-class="section__title">设置step</onekit-text>
+            <view class="body-view">
+                <onekit-slider bindChange="slider2change" step="5"/>
+            </view>
+        </view>
+
+        <view class="section section_gap">
+             <onekit-text onekit-class="section__title">显示当前value</onekit-text>
+            <view class="body-view">
+                <onekit-slider bindChange="slider3change" show-value/>
+            </view>
+        </view>
+
+        <view class="section section_gap">
+            <onekit-text onekit-class="section__title">设置最小/最大值</onekit-text>
+            <view class="body-view">
+                <onekit-slider bindChange="slider4change" min="50" max="200" show-value/>
+            </view>
+        </view>
+    </view>
+</view> -->
+
+<!-- <camera> -->
+<!-- <onekit-camera device-position="back" flash="off" bindError="error" onekit-style="width: 100%; height: 300px;"></onekit-camera>
+<onekit-button type="primary" bindTap="takePhoto">拍照</onekit-button>
+<view>预览</view>
+<image mode="widthFix" src="{{src}}"></image> -->
+<!-- <onekit-camera mode="scanCode" bindscancode="scancode"></onekit-camera>-->
+
+<!-- <video> -->
+<!-- <view class="page-body">
+  <view class="page-section tc">
+    <onekit-video
+        onekit-id="myVideo"
+        src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" bindError="videoErrorCallback" danmu-list="{{danmuList}}" enable-danmu danmu-btn show-center-play-btn="{{false}}" show-play-btn="{{true}}" controls picture-in-picture-mode="{{['push', 'pop']}}" bindEnterpictureinpicture="bindVideoEnterPictureInPicture" bindLeavepictureinpicture="bindVideoLeavePictureInPicture"></onekit-video>
+    <view style="margin: 30rpx auto" class="weui-label">弹幕内容</view>
+    <onekit-input bindBlur="bindInputBlur" onekit-class="weui-input" type="text" placeholder="在此处输入弹幕内容"/>
+    <onekit-button onekit-style="margin: 30rpx auto" bindTap="bindSendDanmu" onekit-class="page-body-button" type="primary" formType="submit">发送弹幕</onekit-button>
+    <navigator style="margin: 30rpx auto"  url="picture-in-picture" hover-class="other-navigator-hover">
+       <onekit-button type="primary" onekit-class="page-body-button" bindTap="bindPlayVideo">小窗模式</onekit-button>
+    </navigator>
+  </view>
+</view> -->
+
+<!-- <map> -->
+<!-- <view class="container">
+  <view class="page-body">
+    <view class="page-section-title">当前组件使用了墨渊底图样式，查看<navigator class="navigator" url="/page/component/pages/map-styles/map-styles">查看更多</navigator>。</view>
+    <view class="page-section page-section-gap">
+      <onekit-map subkey="{{subKey}}" onekit-style="width: 100%; height: 300px;" latitude="{{latitude}}" longitude="{{longitude}}" scale="{{18}}" markers="{{markers}}" covers="{{covers}}" enable-3D="{{enable3d}}" show-compass="{{showCompass}}" enable-zoom="{{enableZoom}}" enable-rotate="{{enableRotate}}" enable-satellite="{{enableSatellite}}" enable-traffic="{{enableTraffic}}" enable-overlooking="{{enableOverlooking}}" enable-scroll="{{enableScroll}}" polygons="{{drawPolygon ? polygons : []}}">
+      </onekit-map>
+    </view>
+  </view>
+
+  <view class="page-section">
+    <view class="btn-area">
+      <onekit-button bindTap="toggle3d">
+        {{ !enable3d ? '启用' : '关闭'}}3D效果
+      </onekit-button>
+      <onekit-button bindTap="toggleShowCompass">
+        {{ !showCompass ? '显示' : '关闭' }}指南针
+      </onekit-button>
+      <onekit-button bindTap="toggleOverlooking">
+        {{ !enableOverlooking ? '开启' : '关闭' }}俯视支持
+      </onekit-button>
+      <onekit-button bindTap="toggleRotate">
+        {{ !enableRotate ? '开启' : '关闭' }}旋转支持
+      </onekit-button>
+      <onekit-button bindTap="togglePolygon">
+        {{ !drawPolygon ? '绘制' : '清除' }}多边形
+      </onekit-button>
+      <onekit-button bindTap="toggleZoom">
+        {{ !enableZoom ? '开启' : '关闭' }}缩放支持
+      </onekit-button>
+      <onekit-button bindTap="toggleScroll">
+        {{ !enableScroll ? '开启' : '关闭' }}拖动支持
+      </onekit-button>
+       <onekit-button bindTap="toggleSatellite">
+        {{ !enableSatellite ? '开启' : '关闭' }}卫星图
+      </onekit-button>
+       <onekit-button bindTap="toggleTraffic">
+        {{ !enableTraffic ? '开启' : '关闭' }}实时路况
+      </onekit-button>
+    </view>
+  </view>
+</view> -->
+
+<!-- <canvas> -->
+<!-- <onekit-canvas type="2d" onekit-id="canvas" onekit-style="width: 300px; height: 300px;"></onekit-canvas> -->
+
+<!-- <web-view> -->
+<!-- <web-view src="https://www.baidu.com/"></web-view> -->
+
+<!-- <editor> -->
+<!-- <view class="container" style="height:{{editorHeight}}px;">
+	<onekit-editor onekit-id="editor" onekit-class="ql-container" placeholder="{{placeholder}}" bindStatuschange="onStatusChange" bindReady="onEditorReady">
+	</onekit-editor>
+</view> -->
+<!-- <view class="toolbar" catchtouchend="format" hidden="{{false}}" style="bottom: {{isIOS ? keyboardHeight : 0}}px; height: {{toolBarHeight}}px; padding-bottom: {{isIOS ? safeHeight : 0}}px"> -->
+	<!-- <i class="iconfont icon-charutupian" catchtouchend="insertImage"></i> -->
+	<!-- <i class="iconfont icon-format-header-2 {{formats.header === 2 ? 'ql-active' : ''}}" data-name="header" data-value="{{2}}"></i> -->
+	<!-- <i class="iconfont icon-format-header-3 {{formats.header === 3 ? 'ql-active' : ''}}" data-name="header" data-value="{{3}}"></i> -->
+	<!-- <i class="iconfont icon-zitijiacu {{formats.bold ? 'ql-active' : ''}}" data-name="bold"></i> -->
+	<!-- <i class="iconfont icon-zitixieti {{formats.italic ? 'ql-active' : ''}}" data-name="italic"></i> -->
+	<!-- <i class="iconfont icon-zitixiahuaxian {{formats.underline ? 'ql-active' : ''}}" data-name="underline"></i> -->
+	<i class="iconfont icon--checklist" data-name="list" data-value="check"></i>
+	<!-- <i class="iconfont icon-youxupailie {{formats.list === 'ordered' ? 'ql-active' : ''}}" data-name="list" data-value="ordered"></i> -->
+	<!-- <i class="iconfont icon-wuxupailie {{formats.list === 'bullet' ? 'ql-active' : ''}}" data-name="list" data-value="bullet"></i> -->
+<!-- </view> -->
+
+
+<onekit-page-meta
+  background-text-style="dark"
+  background-color="#ff0000"
+  background-color-top="#00ff00"
+  background-color-bottom="0000ff"
+></onekit-page-meta>
