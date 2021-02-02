@@ -790,15 +790,14 @@ module.exports = {
     var quick_url = quick_object.url;
     var quick_header = quick_object.header || {};
     var quick_files = quick_object.files;
-    var quick_data = quick_object.data;
+    var quick_data = quick_object.data || [];
     var quick_success = quick_object.success;
     var quick_fail = quick_object.fail;
     var quick_complete = quick_object.complete;
     quick_object = null;
     (0, _PROMISE2.default)(function (SUCCESS) {
       (0, _TASK2.default)(quick_files, function (quick_file, callback) {
-        var filePath = 'bdfile://tmp' + quick_file.uri.substring(10);
-        console.log(filePath);
+        var filePath = quick_file.uri;
         var name = quick_file.name;
         swan.uploadFile({
           url: quick_url,
@@ -816,10 +815,7 @@ module.exports = {
 
         });
       }, function (quick_res) {
-        var res = {
-          quick_res: quick_res
-        };
-        SUCCESS(res);
+        SUCCESS(quick_res);
       });
     }, quick_success, quick_fail, quick_complete);
   },
@@ -835,7 +831,7 @@ module.exports = {
     var quick_complete = quick_object.complete;
     var quick_url = quick_object.url;
     var filename = quick_object.filename || quick_url.substring(quick_url.lastIndexOf('/') + 1);
-    var filePath = 'bdfile://tmp/' + filename;
+    var filePath = swan.env.USER_DATA_PATH + '/' + filename;
     quick_object = null;
     var swan_object = {
       url: quick_url,

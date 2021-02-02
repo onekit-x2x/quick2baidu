@@ -13,15 +13,14 @@ module.exports = {
     const quick_url = quick_object.url
     const quick_header = quick_object.header || {}
     const quick_files = quick_object.files
-    const quick_data = quick_object.data
+    const quick_data = quick_object.data || []
     const quick_success = quick_object.success
     const quick_fail = quick_object.fail
     const quick_complete = quick_object.complete
     quick_object = null
     PROMISE((SUCCESS) => {
       TASK(quick_files, (quick_file, callback) => {
-        const filePath = 'bdfile://tmp' + quick_file.uri.substring(10)
-        console.log(filePath)
+        const filePath = quick_file.uri
         const name = quick_file.name
         swan.uploadFile({
           url: quick_url,
@@ -39,10 +38,7 @@ module.exports = {
 
         })
       }, (quick_res) => {
-        const res = {
-          quick_res
-        }
-        SUCCESS(res)
+        SUCCESS(quick_res)
       })
     }, quick_success, quick_fail, quick_complete)
   },
@@ -57,7 +53,7 @@ module.exports = {
     const quick_complete = quick_object.complete
     const quick_url = quick_object.url
     const filename = quick_object.filename || quick_url.substring(quick_url.lastIndexOf('/') + 1)
-    const filePath = 'bdfile://tmp/' + filename
+    const filePath = swan.env.USER_DATA_PATH + '/' + filename
     quick_object = null
     const swan_object = {
       url: quick_url,

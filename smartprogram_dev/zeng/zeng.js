@@ -10,34 +10,76 @@ const request = quickapp2baidu["@system.request"]
 const fetch = quickapp2baidu["@system.fetch"]
 const websocketfactory = quickapp2baidu["@system.websocketfactory"]
 const storage = quickapp2baidu["@system.storage"]
+const file = quickapp2baidu["@system.file"]
+const media  = quickapp2baidu["@system.media"]
 
 
 global = {};
 Page({
     data: {},
     onLoad() {
-
-        storage.set({
-            key: 'A1',
-            value: 'V1',
+        media.pickImage({
             success: function(data) {
-              console.log(data)
+                request.upload({
+                    url: 'https://www.onekit.cn',
+                    files: [
+                      {
+                        uri: data.uri,
+                        name: 'file1',
+                        filename: 'test.png'
+                      }
+                    ],
+                    data: [
+                      {
+                        name: 'param1',
+                        value: 'value1'
+                      }
+                    ],
+                    success: function(data) {
+                      console.log(data)
+                    },
+                    fail: function(data) {
+                      console.log(data)
+                    }
+                  })
+              console.log(`handling success: ${data.uri}`)
             },
             fail: function(data, code) {
               console.log(`handling fail, code = ${code}`)
             }
           })
-          storage.get({
-            key: 'A1',
-            success: function(data) {
-              console.log(data)
-            },
-            fail: function(data, code) {
-              console.log(`handling fail, code = ${code}`)
-            }
-          })
+        // console.log(swan.env.USER_DATA_PATH)
+        // file.mkdir({
+        //     uri: 'bdfile://files/dir/',
+        //     success: function(data) {
+        //       console.log(data)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
 
-          console.log(storage.length)
+        // storage.set({
+        //     key: 'A1',
+        //     value: 'V1',
+        //     success: function(data) {
+        //       console.log(data)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+        //   storage.get({
+        //     key: 'A1',
+        //     success: function(data) {
+        //       console.log(data)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+
+        //   console.log(storage.length)
 
         //   storage.key({
         //     index: 2,
@@ -130,33 +172,39 @@ Page({
         //       console.log(data)
         //     }
         //   })
+        // swan.chooseImage({
+        //     success: res => {
+        //         swan.uploadFile({
+        //             // 仅为示例，并非真实的接口地址
+        //             url: 'https://www.onekit.cn',
+        //             filePath: res.tempFilePaths[0],
+        //             name: 'myfile',
+        //             header: {
+        //                 'content-type': 'multipart/form-data'
+        //             },
+        //             formData: {
+        //                 'user': 'test'
+        //             },
+        //             success: res => {
 
+        //                 console.log('uploadFile success', res);
 
+        //             },
+        //             fail: err => {
+        //                 console.log('uploadFile fail', err);
 
-
-
-        // request.upload({
-        //     url: 'https://smartprogram.baidu.com/docs/develop/api/show/tab_swan-navigateBack/',
-        //     files: [
-        //       {
-        //         uri: 'internal://a.html',
-        //         name: 'file1',
-        //         filename: 'test.png'
-        //       }
-        //     ],
-        //     data: [
-        //       {
-        //         name: 'param1',
-        //         value: 'value1'
-        //       }
-        //     ],
-        //     success: function(data) {
-        //       console.log(data)
-        //     },
-        //     fail: function(data) {
-        //       console.log(data)
+        //             }
+        //         });
+        //         console.log(res)
         //     }
-        //   })
+        // });
+
+
+
+
+
+
+
         // router.back({
         //     path: '/wang/wang'
         //   })
