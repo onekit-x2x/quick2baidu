@@ -7,12 +7,96 @@ const configuration = quickapp2baidu["@system.configuration"]
 const prompt = quickapp2baidu["@system.prompt"]
 const webview = quickapp2baidu["@system.webview"]
 const request = quickapp2baidu["@system.request"]
+const fetch = quickapp2baidu["@system.fetch"]
+const websocketfactory = quickapp2baidu["@system.websocketfactory"]
+const storage = quickapp2baidu["@system.storage"]
 
 
 global = {};
 Page({
     data: {},
     onLoad() {
+
+        storage.set({
+            key: 'A1',
+            value: 'V1',
+            success: function(data) {
+              console.log(data)
+            },
+            fail: function(data, code) {
+              console.log(`handling fail, code = ${code}`)
+            }
+          })
+          storage.get({
+            key: 'A1',
+            success: function(data) {
+              console.log(data)
+            },
+            fail: function(data, code) {
+              console.log(`handling fail, code = ${code}`)
+            }
+          })
+
+          console.log(storage.length)
+
+        //   storage.key({
+        //     index: 2,
+        //     success: function(data) {
+        //       console.log(data)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+        //   storage.delete({
+        //     key: 'A1',
+        //     success: function(data) {
+        //       console.log(data)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+        //   storage.clear({
+        //     success: function(data) {
+        //       console.log(data)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+    //    const  ws = websocketfactory.create({
+    //         url: 'wss://example.qq.com',
+    //         header: {
+    //           'content-type': 'application/json'
+    //         },
+    //         protocols: ['protocol']
+    //       })
+    //       ws.onopen = function(data) {
+    //         console.log(data)
+    //       }
+    //       ws.send({
+    //         data: 'send message',
+    //         success: function(data) {
+    //           console.log(data)
+    //         },
+    //         fail: function(data) {
+    //           console.log(data)
+    //         }
+    //       })
+        // fetch.fetch({
+        //     url: 'https://www.onekit.cn',
+        //     responseType: 'text',
+        //     success: function(response) {
+        //       console.log(response)
+
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, errMsg = ${data}`)
+        //       console.log(`handling fail, errCode = ${code}`)
+        //     }
+        //   })
+
 
         // const s = swan.downloadFile({
         //     url: 'http://localhost/SVN.pdf',
@@ -25,26 +109,27 @@ Page({
         // s.onProgressUpdate(res=>{
         //     console.log(res)
         // })
-        request.onDownloadComplete({
-            token: '',
-            success: function(data) {
-              console.log(data)
-            },
-            fail: function(data) {
-              console.log(data)
-            }
-          })
 
-        request.download({
-            url: 'http://localhost/a.html',
-            success: function(data) {
 
-              console.log(data)
-            },
-            fail: function(data, code) {
-              console.log(`handling fail, code = ${code}`)
-            }
-          })
+        // request.download({
+        //     url: 'http://localhost/SVN.pdf',
+        //     success: function(data) {
+
+        //       console.log(data)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+        //   request.onDownloadComplete({
+        //     token: '',
+        //     success: function(data) {
+        //       console.log(data)
+        //     },
+        //     fail: function(data) {
+        //       console.log(data)
+        //     }
+        //   })
 
 
 

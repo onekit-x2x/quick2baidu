@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+/* eslint-disable getter-return */
 /* eslint-disable camelcase */
 import PROMISE from '../node_modules/oneutil/PROMISE'
 
@@ -133,5 +135,11 @@ module.exports = {
         }
       })
     }, quick_success, quick_fail, quick_complete)
+  },
+
+
+  get length() {
+    const swan_res = swan.getStorageInfoSync()
+    return swan_res.keys.length
   }
 }

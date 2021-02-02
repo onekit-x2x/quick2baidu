@@ -841,8 +841,6 @@ module.exports = {
       url: quick_url,
       filePath: filePath
     };
-    var DownloadTask = swan.downloadFile(swan_object);
-    this.DownloadTask = DownloadTask;
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.downloadFile({
         url: quick_url,
@@ -858,25 +856,23 @@ module.exports = {
         }
       });
     }, quick_success, quick_fail, quick_complete);
-    this.quick_url = quick_url;
+    getApp().onekit_DownloadTask = swan.downloadFile(swan_object);
+    getApp().onekit_url = quick_url;
   },
 
   /** onDownloadComplete */
 
   onDownloadComplete: function onDownloadComplete(quick_object) {
-    var _this = this;
-
     if (!quick_object) {
       return;
     }
     var quick_success = quick_object.success;
-    quick_success(this.DownloadTask.onProgressUpdate(function () {}));
-    if (this.DownloadTask) {
-      this.DownloadTask.onProgressUpdate(function (swan_res) {
-        console.log(swan_res);
+    if (getApp().onekit_DownloadTask) {
+      var DownloadTask = getApp().onekit_DownloadTask;
+      DownloadTask.onProgressUpdate(function (swan_res) {
         if (swan_res.progress === '100') {
           quick_success({
-            uri: _this.quick_url
+            uri: getApp().onekit_url
           });
         }
       });
@@ -942,11 +938,12 @@ module.exports = {
         responseType: quick_responseType,
         success: function success(swan_res) {
           var quick_res = {
+            errno: swan_res.errno,
+            errmsg: swan_res.errmsg,
             code: swan_res.statusCode,
             data: swan_res.data,
             headers: swan_res.header,
-            cookies: swan_res.cookies,
-            profile: swan_res.profile
+            logid: swan_res.logid
           };
           SUCCESS(quick_res);
         }
@@ -1196,8 +1193,16 @@ module.exports = {
         }
       });
     }, quick_success, quick_fail, quick_complete);
+  },
+
+
+  get length() {
+    var swan_res = swan.getStorageInfoSync();
+    return swan_res.keys.length;
   }
-}; /* eslint-disable camelcase */
+}; /* eslint-disable consistent-return */
+/* eslint-disable getter-return */
+/* eslint-disable camelcase */
 
 /***/ }),
 /* 47 */

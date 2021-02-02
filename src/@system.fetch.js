@@ -25,11 +25,12 @@ module.exports = {
         responseType: quick_responseType,
         success: swan_res => {
           const quick_res = {
+            errno: swan_res.errno,
+            errmsg: swan_res.errmsg,
             code: swan_res.statusCode,
             data: swan_res.data,
             headers: swan_res.header,
-            cookies: swan_res.cookies,
-            profile: swan_res.profile
+            logid: swan_res.logid
           }
           SUCCESS(quick_res)
         }

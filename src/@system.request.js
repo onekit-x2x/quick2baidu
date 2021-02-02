@@ -63,8 +63,6 @@ module.exports = {
       url: quick_url,
       filePath,
     }
-    const DownloadTask = swan.downloadFile(swan_object)
-    this.DownloadTask = DownloadTask
     PROMISE((SUCCESS) => {
       swan.downloadFile({
         url: quick_url,
@@ -80,7 +78,8 @@ module.exports = {
         }
       })
     }, quick_success, quick_fail, quick_complete)
-    this.quick_url = quick_url
+    getApp().onekit_DownloadTask = swan.downloadFile(swan_object)
+    getApp().onekit_url = quick_url
   },
   /** onDownloadComplete */
 
@@ -89,12 +88,12 @@ module.exports = {
       return
     }
     const quick_success = quick_object.success
-    if (this.DownloadTask) {
-      this.DownloadTask.onProgressUpdate(swan_res => {
-        console.log(swan_res)
+    if (getApp().onekit_DownloadTask) {
+      const DownloadTask = getApp().onekit_DownloadTask
+      DownloadTask.onProgressUpdate(swan_res => {
         if (swan_res.progress === '100') {
           quick_success({
-            uri: this.quick_url
+            uri: getApp().onekit_url
           })
         }
       })
