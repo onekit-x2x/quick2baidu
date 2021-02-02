@@ -18,39 +18,73 @@ global = {};
 Page({
     data: {},
     onLoad() {
-        media.pickImage({
-            success: function(data) {
-                request.upload({
-                    url: 'https://www.onekit.cn',
-                    files: [
-                      {
-                        uri: data.uri,
-                        name: 'file1',
-                        filename: 'test.png'
-                      }
-                    ],
-                    data: [
-                      {
-                        name: 'param1',
-                        value: 'value1'
-                      }
-                    ],
-                    success: function(data) {
-                      console.log(data)
-                    },
-                    fail: function(data) {
-                      console.log(data)
-                    }
-                  })
-              console.log(`handling success: ${data.uri}`)
+        file.move({
+            srcUri: 'internal://b.pdf',
+            dstUri: 'internal://user',
+            success: function(uri) {
+              console.log(uri)
             },
             fail: function(data, code) {
               console.log(`handling fail, code = ${code}`)
             }
           })
         // console.log(swan.env.USER_DATA_PATH)
-        // file.mkdir({
-        //     uri: 'bdfile://files/dir/',
+        //  const fileSystemManager = swan.getFileSystemManager()
+        //  fileSystemManager.readdir({
+        //     dirPath:  'bdfile://usr/',
+        //     success:res=>{
+        //         console.log(res)
+        //     },fail:res=>{
+        //         console.log(res)
+        //     }
+        //  })
+        // //   fileSystemManager.unlink({
+        //     filePath: 'bdfile://usr/SVN.pdf',
+        //     success:res=>{
+        //         console.log(res)
+        //     },fail:res=>{
+        //         console.log(res)
+        //     }
+        //   })
+        // file.copy({
+        //     srcUri: 'internal://user/d.pdf',
+        //     dstUri: 'internal://file',
+        //     success: function(uri) {
+        //       console.log(uri)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+        file.list({
+            uri: 'internal://user',
+            success: function(data) {
+              console.log(data)
+            },
+            fail: function(data, code) {
+              console.log(`handling fail, code = ${code}`)
+            }
+          })
+
+        // fileSystemManager.readdir({
+        //     dirPath: `${swan.env.USER_DATA_PATH}/user/`,
+
+        //     success:res=>{
+        //         console.log(res)
+        //     }
+        // })
+        // file.delete({
+        //     uri: 'internal://c.pdf',
+        //     success: function(data) {
+        //       console.log(data)
+
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+        // file.delete({
+        //     uri: 'internal://user/e.txt',
         //     success: function(data) {
         //       console.log(data)
         //     },
@@ -58,6 +92,124 @@ Page({
         //       console.log(`handling fail, code = ${code}`)
         //     }
         //   })
+//         const buffer = new ArrayBuffer(8);
+
+// console.log(buffer.byteLength);
+//         file.writeArrayBuffer({
+//             uri: 'internal://user/e.txt',
+//             buffer: buffer,
+//             success: function(data) {
+//               console.log(data)
+//             },
+//             fail: function(data) {
+//               console.log(data)
+//             }
+//           })
+//           file.readArrayBuffer({
+//             uri: 'internal://user/e.txt',
+//             position: 100,
+//             length: 100,
+//             success: function(data) {
+//               console.log(data.buffer)
+//             },
+//             fail: function(data, code) {
+//               console.log(`handling fail, code = ${code}`)
+//             }
+//           })
+
+        // const fileSystemManager = swan.getFileSystemManager()
+        // fileSystemManager.mkdir({
+        //     dirPath: `${swan.env.USER_DATA_PATH}/b.pdf`,
+        //     recursive:true,
+        //     success:res=>{
+        //         console.log(res)
+        //     }
+        // })
+        // fileSystemManager.writeFile({
+        //     filePath: `${swan.env.USER_DATA_PATH}/c.pdf`,
+        //     data: 'writeFile',
+        //     success: res => {
+        //         console.log('writeFile success', res);
+        //     },
+        //     fail: err => {
+        //         swan.showToast({
+        //             title: JSON.stringify(err),
+        //             icon: 'none'
+        //         });
+        //         console.log('writeFile fail', err);
+        //     }
+        // });
+        // media.pickImage({
+        //     success: function(data) {
+        //         request.upload({
+        //             url: 'https://www.onekit.cn',
+        //             files: [
+        //               {
+        //                 uri: data.uri,
+        //                 name: 'file1',
+        //                 filename: 'test.png'
+        //               }
+        //             ],
+        //             data: [
+        //               {
+        //                 name: 'param1',
+        //                 value: 'value1'
+        //               }
+        //             ],
+        //             success: function(data) {
+        //               console.log(data)
+        //             },
+        //             fail: function(data) {
+        //               console.log(data)
+        //             }
+        //           })
+        //       console.log(`handling success: ${data.uri}`)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+        // console.log(swan.env.USER_DATA_PATH)
+
+
+        // file.mkdir({
+        //     uri: 'internal://user/',
+        //     success: function(data) {
+        //       console.log(data,'sssssssssssssssss')
+        //     },
+        //     fail: function(data) {
+        //       console.log(data)
+        //     }
+        //   })
+        //   file.writeText({
+        //     uri: 'internal://user/d.pdf',
+        //     text: 'test',
+        //     success: function(data) {
+        //       console.log(data)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+        //   file.readText({
+        //     uri: 'internal://user/d.pdf',
+        //     success: function(data) {
+        //       console.log('text: ' + data.text)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+        //   file.access({
+        //     uri: 'internal://files/dir',
+        //     success: function(data) {
+        //       console.log(data)
+        //     },
+        //     fail: function(data) {
+        //       console.log(data)
+        //     }
+        //   })
+
 
         // storage.set({
         //     key: 'A1',

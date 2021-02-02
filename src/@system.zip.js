@@ -14,9 +14,9 @@ module.exports = {
     const quick_complete = quick_object.complete
     quick_object = null
     const path = swan.env.USER_DATA_PATH
-    const FileSystemManager = swan.getFileSystemManager()
+    const fileSystemManager = swan.getFileSystemManager()
     PROMISE((SUCCESS) => {
-      FileSystemManager.unzip({
+      fileSystemManager.unzip({
         zipFilePath: quick_srcUri.indexOf('internal://') === 0 ? path + quick_srcUri.substring(10) : quick_srcUri,
         targetPath: quick_dstUri.indexOf('internal://') === 0 ? path + quick_dstUri.substring(10) : quick_dstUri,
         success: () => {

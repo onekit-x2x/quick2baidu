@@ -1222,18 +1222,28 @@ module.exports = {
     var quick_fail = quick_object.fail;
     var quick_complete = quick_object.complete;
     quick_object = null;
-    var FileSystemManager = swan.getFileSystemManager();
+    var fileSystemManager = swan.getFileSystemManager();
+    var srcPath = swan.env.USER_DATA_PATH + quick_srcUri.substring(10);
+    var destPath = swan.env.USER_DATA_PATH + quick_dstUri.substring(10);
     (0, _PROMISE2.default)(function (SUCCESS) {
-      FileSystemManager.copyFile({
-        srcPath: quick_srcUri,
-        destPath: quick_dstUri,
+      fileSystemManager.copyFile({
+        srcPath: srcPath,
+        destPath: destPath,
         success: function success() {
-          var quick_res = {};
+          var quick_res = {
+            errMsg: 'copyFile: ok'
+          };
           SUCCESS(quick_res);
         }
       });
-      FileSystemManager.removeSavedFile({
-        filePath: quick_srcUri
+      fileSystemManager.unlink({
+        filePath: srcPath,
+        success: function success() {
+          var quick_res = {
+            errMsg: 'unlink: ok'
+          };
+          SUCCESS(quick_res);
+        }
       });
     }, quick_success, quick_fail, quick_complete);
   },
@@ -1250,13 +1260,17 @@ module.exports = {
     var quick_fail = quick_object.fail;
     var quick_complete = quick_object.complete;
     quick_object = null;
-    var FileSystemManager = swan.getFileSystemManager();
+    var fileSystemManager = swan.getFileSystemManager();
+    var srcPath = swan.env.USER_DATA_PATH + quick_srcUri.substring(10);
+    var destPath = swan.env.USER_DATA_PATH + quick_dstUri.substring(10);
     (0, _PROMISE2.default)(function (SUCCESS) {
-      FileSystemManager.copyFile({
-        srcPath: quick_srcUri,
-        destPath: quick_dstUri,
+      fileSystemManager.copyFile({
+        srcPath: srcPath,
+        destPath: destPath,
         success: function success() {
-          var quick_res = {};
+          var quick_res = {
+            errMsg: 'copyFile: ok'
+          };
           SUCCESS(quick_res);
         }
       });
@@ -1274,10 +1288,11 @@ module.exports = {
     var quick_complete = quick_object.complete;
     var quick_uri = quick_object.uri;
     quick_object = null;
-    var FileSystemManager = swan.getFileSystemManager();
+    var fileSystemManager = swan.getFileSystemManager();
+    var dirPath = swan.env.USER_DATA_PATH + quick_uri.substring(10);
     (0, _PROMISE2.default)(function (SUCCESS) {
-      FileSystemManager.readdir({
-        dirPath: quick_uri,
+      fileSystemManager.readdir({
+        dirPath: dirPath,
         success: function success(swan_res) {
           var quick_res = {
             fileList: swan_res.files
@@ -1299,14 +1314,16 @@ module.exports = {
     var quick_complete = quick_object.complete;
     var quick_uri = quick_object.uri;
     quick_object = null;
-    var FileSystemManager = swan.getFileSystemManager();
+    var fileSystemManager = swan.getFileSystemManager();
+    var filePath = swan.env.USER_DATA_PATH + quick_uri.substring(10);
     (0, _PROMISE2.default)(function (SUCCESS) {
-      FileSystemManager.getFileInfo({
-        filePath: quick_uri,
+      fileSystemManager.getFileInfo({
+        filePath: filePath,
         success: function success(swan_res) {
           var quick_res = {
             length: swan_res.size,
-            lastModifiedTime: new Date().getTime()
+            lastModifiedTime: new Date().getTime(),
+            errMsg: 'getFileInfo: ok'
           };
           SUCCESS(quick_res);
         }
@@ -1325,8 +1342,9 @@ module.exports = {
     var quick_complete = quick_object.complete;
     var quick_uri = quick_object.uri;
     quick_object = null;
+    var filePath = swan.env.USER_DATA_PATH + quick_uri.substring(10);
     var swan_object = {
-      filePath: quick_uri,
+      filePath: filePath,
       success: quick_success,
       fail: quick_fail,
       complete: quick_complete
@@ -1347,15 +1365,16 @@ module.exports = {
     var quick_text = quick_object.text;
     var quick_encoding = quick_object.encoding || 'utf8';
     quick_object = null;
-    var FileSystemManager = swan.getFileSystemManager();
+    var fileSystemManager = swan.getFileSystemManager();
+    var filePath = swan.env.USER_DATA_PATH + quick_uri.substring(10);
     (0, _PROMISE2.default)(function (SUCCESS) {
-      FileSystemManager.writeFile({
-        filePath: quick_uri,
+      fileSystemManager.writeFile({
+        filePath: filePath,
         data: quick_text,
         encoding: quick_encoding,
         success: function success() {
           var quick_res = {
-            uri: quick_uri
+            errMsg: 'writeFile: ok'
           };
           SUCCESS(quick_res);
         },
@@ -1378,17 +1397,15 @@ module.exports = {
     var quick_uri = quick_object.uri;
     var quick_buffer = quick_object.buffer;
     quick_object = null;
-    var FileSystemManager = swan.getFileSystemManager();
+    var fileSystemManager = swan.getFileSystemManager();
+    var filePath = swan.env.USER_DATA_PATH + quick_uri.substring(10);
     (0, _PROMISE2.default)(function (SUCCESS) {
-      FileSystemManager.writeFile({
-        filePath: quick_uri,
-        data: quick_text,
+      fileSystemManager.writeFile({
+        filePath: filePath,
+        data: quick_buffer,
         success: function success() {
           var quick_res = {
-            uri: quick_uri,
-            buffer: quick_buffer,
-            success: quick_success,
-            fail: quick_fail
+            errMsg: 'writeFile: ok'
           };
           SUCCESS(quick_res);
         },
@@ -1408,10 +1425,11 @@ module.exports = {
     var quick_uri = quick_object.uri;
     var quick_encoding = quick_object.encoding || 'utf8';
     quick_object = null;
-    var FileSystemManager = swan.getFileSystemManager();
+    var fileSystemManager = swan.getFileSystemManager();
+    var filePath = swan.env.USER_DATA_PATH + quick_uri.substring(10);
     (0, _PROMISE2.default)(function (SUCCESS) {
-      FileSystemManager.readFile({
-        filePath: quick_uri,
+      fileSystemManager.readFile({
+        filePath: filePath,
         encoding: quick_encoding,
         success: function success(swan_res) {
           var quick_res = {
@@ -1434,10 +1452,11 @@ module.exports = {
     var quick_complete = quick_object.complete;
     var quick_uri = quick_object.uri;
     quick_object = null;
-    var FileSystemManager = swan.getFileSystemManager();
+    var fileSystemManager = swan.getFileSystemManager();
+    var filePath = swan.env.USER_DATA_PATH + quick_uri.substring(10);
     (0, _PROMISE2.default)(function (SUCCESS) {
-      FileSystemManager.readFile({
-        filePath: quick_uri,
+      fileSystemManager.readFile({
+        filePath: filePath,
         success: function success(swan_res) {
           var quick_res = {
             buffer: swan_res.data
@@ -1459,10 +1478,11 @@ module.exports = {
     var quick_complete = quick_object.complete;
     var quick_uri = quick_object.uri;
     quick_object = null;
-    var FileSystemManager = swan.getFileSystemManager();
+    var fileSystemManager = swan.getFileSystemManager();
     (0, _PROMISE2.default)(function (SUCCESS, FAIL) {
-      FileSystemManager.access({
-        path: quick_uri,
+      var path = swan.env.USER_DATA_PATH + quick_uri.substring(10);
+      fileSystemManager.access({
+        path: path,
         success: function success() {
           var quick_res = 'Response { code=0 content=success }';
           SUCCESS(quick_res);
@@ -1487,18 +1507,15 @@ module.exports = {
     var quick_uri = quick_object.uri;
     var quick_recursive = quick_object.recursive || false;
     quick_object = null;
-    var FileSystemManager = swan.getFileSystemManager();
+    var fileSystemManager = swan.getFileSystemManager();
     (0, _PROMISE2.default)(function (SUCCESS) {
-      FileSystemManager.mkdir({
-        dirPath: quick_uri,
+      var dirPath = swan.env.USER_DATA_PATH + quick_uri.substring(10);
+      fileSystemManager.mkdir({
+        dirPath: dirPath,
         recursive: quick_recursive,
         success: function success() {
           var quick_res = {
-            options: {
-              uri: quick_uri,
-              success: quick_success,
-              fail: quick_fail
-            }
+            errMsg: 'mkdir: ok'
           };
           SUCCESS(quick_res);
         }
@@ -1518,18 +1535,15 @@ module.exports = {
     var quick_uri = quick_object.uri;
     var quick_recursive = quick_object.recursive || false;
     quick_object = null;
-    var FileSystemManager = swan.getFileSystemManager();
+    var fileSystemManager = swan.getFileSystemManager();
     (0, _PROMISE2.default)(function (SUCCESS) {
-      FileSystemManager.rmdir({
-        dirPath: quick_uri,
+      var dirPath = swan.env.USER_DATA_PATH + quick_uri.substring(10);
+      fileSystemManager.rmdir({
+        dirPath: dirPath,
         recursive: quick_recursive,
         success: function success() {
           var quick_res = {
-            options: {
-              uri: quick_uri,
-              success: quick_success,
-              fail: quick_fail
-            }
+            errMsg: 'rmdir: ok'
           };
           SUCCESS(quick_res);
         }
@@ -2588,9 +2602,9 @@ module.exports = {
     var quick_complete = quick_object.complete;
     quick_object = null;
     var path = swan.env.USER_DATA_PATH;
-    var FileSystemManager = swan.getFileSystemManager();
+    var fileSystemManager = swan.getFileSystemManager();
     (0, _PROMISE2.default)(function (SUCCESS) {
-      FileSystemManager.unzip({
+      fileSystemManager.unzip({
         zipFilePath: quick_srcUri.indexOf('internal://') === 0 ? path + quick_srcUri.substring(10) : quick_srcUri,
         targetPath: quick_dstUri.indexOf('internal://') === 0 ? path + quick_dstUri.substring(10) : quick_dstUri,
         success: function success() {
