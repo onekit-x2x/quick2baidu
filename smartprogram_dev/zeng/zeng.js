@@ -12,22 +12,204 @@ const websocketfactory = quickapp2baidu["@system.websocketfactory"]
 const storage = quickapp2baidu["@system.storage"]
 const file = quickapp2baidu["@system.file"]
 const media  = quickapp2baidu["@system.media"]
+const vibrator   = quickapp2baidu["@system.vibrator"]
+const barcode    = quickapp2baidu["@system.barcode"]
+const sensor     = quickapp2baidu["@system.sensor"]
+const clipboard     = quickapp2baidu["@system.clipboard"]
+const geolocation      = quickapp2baidu["@system.geolocation"]
+const calendar      = quickapp2baidu["@system.calendar"]
+const network      = quickapp2baidu["@system.network"]
+const device      = quickapp2baidu["@system.device"]
+const brightness      = quickapp2baidu["@system.brightness"]
 
 
 global = {};
 Page({
     data: {},
     onLoad() {
-        file.move({
-            srcUri: 'internal://b.pdf',
-            dstUri: 'internal://user',
-            success: function(uri) {
-              console.log(uri)
+        brightness.setValue({
+            value: 255,
+            success: function(data) {
+              console.log(data)
             },
-            fail: function(data, code) {
-              console.log(`handling fail, code = ${code}`)
+            fail: function(data) {
+              console.log(data)
             }
           })
+        //   brightness.getMode({
+        //     success: function(data) {
+        //       console.log(`handling success, mode = ${data.mode}`)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+        // brightness.getValue({
+        //     success: function(data) {
+        //       console.log(`handling success, value = ${data.value}`)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+        // device.getInfo({
+        //     success: function(ret) {
+        //       console.log(`handling success， brand = ${ret.brand}`)
+        //     }
+        //   })
+        // network.getType({
+        //     success: function(data) {
+        //       console.log(data)
+        //     }
+        //   })
+        //   swan.getNetworkType({
+        //     success: res => {
+        //         console.log(res)
+        //     }
+        // });
+        // swan.onNetworkStatusChange(res => {
+        //    console.log(res)
+        // });
+        //   network.subscribe({
+        //     callback: function(data) {
+        //       console.log(data)
+        //     }
+        //   })
+        // swan.addEventOnCalendar({
+        //     title: '智能小程序日历功能测试',
+        //     // 2019-12-28 14:31:23
+        //     startTime: 1577514683000,
+        //     // 2019-12-30 14:31:23
+        //     endTime: 1577687483000,
+
+        //     location: '线上',
+        //     remindMinutesBefore: 10,
+        //     success: res => {
+        //         console.log('日程新建成功', res);
+
+
+        //     },
+        //     fail: err => {
+        //         console.log('日程新建失败', err);
+        //     }
+        // });
+        // console.log(new Date().getTime())
+        // calendar.insert({
+        //     title: '事件Ａ',
+        //     startDate: 1577514683000,
+        //     endDate: 1577687483000,
+        //     remindMinutes: [5, 15, 30],
+        //     success: function(data) {
+        //       console.log('handling success')
+        //     }
+        //   })
+    //     geolocation.subscribe({
+    //     callback: function(data) {
+    //       console.log(
+    //         data.latitude
+    //       )
+    //     },
+    //     fail: function(data, code) {
+    //       console.log(`handling fail, code = ${code}`)
+    //     }
+    //   })
+    //   geolocation.unsubscribe()
+        // geolocation.getLocationType({
+        //     success: function(data) {
+        //       console.log(data)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+        // geolocation.getLocation({
+        //     success: function(data) {
+        //       console.log(
+        //         data
+        //       )
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+        //   geolocation.openLocation({
+        //     latitude: 22.553594050274,
+        //     longitude: 114.0586290118,
+        //     success: function() {
+        //       console.log(`open location success`)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`open location fail, code = ${code}`)
+        //     },
+        //     complete: function() {
+        //       console.log(`open location complete`)
+        //     }
+        //   })
+        //   geolocation.chooseLocation({
+        //     success: function(data) {
+        //       console.log(
+        //        data
+        //       )
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`choose location fail, code = ${code}`)
+        //     },
+        //     complete: function() {
+        //       console.log(`choose location complete`)
+        //     }
+        //   })
+        // clipboard.set({
+        //     text: 'text'
+        //   })
+        //   clipboard.get({
+        //     success: function(data) {
+        //       console.log(`handling success: ${data.text}`)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+        // sensor.subscribeAccelerometer({
+        //     callback: function(ret) {
+        //       console.log(ret)
+        //     }
+        //   })
+        //   sensor.unsubscribeAccelerometer()
+        //   sensor.subscribeCompass({
+        //     callback: function(ret) {
+        //       console.log(`handling callback, direction = ${ret.direction}`)
+        //     }
+        //   })
+        //   sensor.unsubscribeCompass()
+        // sensor.subscribeStepCounter({
+        //     callback: function(ret) {
+        //       console.log(`handling callback, steps = ${ret.steps}`)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+        // barcode.scan({
+        //     success: function(data) {
+        //       console.log(data)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+        // vibrator.vibrate({
+        //     mode: 'long'
+        //   })
+        // file.move({
+        //     srcUri: 'internal://b.pdf',
+        //     dstUri: 'internal://user',
+        //     success: function(uri) {
+        //       console.log(uri)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
         // console.log(swan.env.USER_DATA_PATH)
         //  const fileSystemManager = swan.getFileSystemManager()
         //  fileSystemManager.readdir({
@@ -56,15 +238,15 @@ Page({
         //       console.log(`handling fail, code = ${code}`)
         //     }
         //   })
-        file.list({
-            uri: 'internal://user',
-            success: function(data) {
-              console.log(data)
-            },
-            fail: function(data, code) {
-              console.log(`handling fail, code = ${code}`)
-            }
-          })
+        // file.list({
+        //     uri: 'internal://user',
+        //     success: function(data) {
+        //       console.log(data)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
 
         // fileSystemManager.readdir({
         //     dirPath: `${swan.env.USER_DATA_PATH}/user/`,

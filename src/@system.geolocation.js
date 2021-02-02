@@ -78,20 +78,34 @@ module.exports = {
     const quick_coordType = quick_object.coordType || 'wgs84'
     quick_object = null
     PROMISE((SUCCESS) => {
-      swan.chooseLocation({
-        latitude: quick_latitude,
-        longitude: quick_longitude,
-        success: (swan_res) => {
-          const quick_res = {
-            name: swan_res.name,
-            address: swan_res.address,
-            latitude: swan_res.latitude,
-            longitude: swan_res.longitude,
-            coordType: quick_coordType,
+      if (!quick_latitude || !quick_longitude) {
+        swan.getLocation({
+          type: quick_coordType,
+          success: swan_res => {
+            const quick_res = {
+              name: swan_res.street,
+              address: swan_res.street,
+              latitude: swan_res.latitude,
+              longitude: swan_res.longitude,
+              coordType: quick_coordType,
+            }
+            SUCCESS(quick_res)
           }
-          SUCCESS(quick_res)
-        }
-      })
+        })
+      } else {
+        swan.chooseLocation({
+          success: (swan_res) => {
+            const quick_res = {
+              name: swan_res.name,
+              address: swan_res.address,
+              latitude: swan_res.latitude,
+              longitude: swan_res.longitude,
+              coordType: quick_coordType,
+            }
+            SUCCESS(quick_res)
+          }
+        })
+      }
     }, quick_success, quick_fail, quick_complete)
   },
   /** getLocationType */

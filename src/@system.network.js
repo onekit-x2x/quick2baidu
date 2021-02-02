@@ -42,27 +42,30 @@ module.exports = {
     }
     const quick_callback = quick_object.callback
     quick_object = null
-    swan.onNetworkStatusChange(function (swan_res) {
-      let quick_res_type
-      switch (swan_res.networkType) {
-        case 'unknown':
-          quick_res_type = 'others'
-          break
-        default:
-          quick_res_type = swan_res.networkType
-          break
-      }
-      const quick_res = {
-        type: quick_res_type,
-        metered: false,
-        isConnected: swan_res.isConnected
-      }
-      quick_callback(quick_res)
-    })
+    getApp().onekit_NetworkStatusChange = true
+    if (getApp().onekit_NetworkStatusChange) {
+      swan.onNetworkStatusChange(function (swan_res) {
+        let quick_res_type
+        switch (swan_res.networkType) {
+          case 'unknown':
+            quick_res_type = 'others'
+            break
+          default:
+            quick_res_type = swan_res.networkType
+            break
+        }
+        const quick_res = {
+          type: quick_res_type,
+          metered: false,
+          isConnected: swan_res.isConnected
+        }
+        quick_callback(quick_res)
+      })
+    }
   },
   // ///////
   unsubscribe() {
-    swan.offNetworkStatusChange()
+    getApp().onekit_NetworkStatusChange = false
   },
   /** getSimOperator */
   getSimOperator() {

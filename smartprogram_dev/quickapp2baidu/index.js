@@ -483,12 +483,12 @@ var _Video = __webpack_require__(64);
 
 var _Video2 = _interopRequireDefault(_Video);
 
+var _system51 = __webpack_require__(66);
+
+var _system52 = _interopRequireDefault(_system51);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
-/* eslint-disable camelcase */
-/* eslint-disable no-console */
 exports.default = {
   OnekitApp: _OnekitApp2.default,
   OnekitBehavior: _OnekitBehavior2.default,
@@ -519,9 +519,13 @@ exports.default = {
   '@system.media': _system46.default,
   '@system.image': _system48.default,
   '@system.audio': _system50.default,
-  '@hap.io.Video': _Video2.default
+  '@hap.io.Video': _Video2.default,
+  '@system.calendar': _system52.default
 
-};
+}; /* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable camelcase */
+/* eslint-disable no-console */
 
 /***/ }),
 /* 34 */
@@ -1909,20 +1913,34 @@ module.exports = {
     var quick_coordType = quick_object.coordType || 'wgs84';
     quick_object = null;
     (0, _PROMISE2.default)(function (SUCCESS) {
-      swan.chooseLocation({
-        latitude: quick_latitude,
-        longitude: quick_longitude,
-        success: function success(swan_res) {
-          var quick_res = {
-            name: swan_res.name,
-            address: swan_res.address,
-            latitude: swan_res.latitude,
-            longitude: swan_res.longitude,
-            coordType: quick_coordType
-          };
-          SUCCESS(quick_res);
-        }
-      });
+      if (!quick_latitude || !quick_longitude) {
+        swan.getLocation({
+          type: quick_coordType,
+          success: function success(swan_res) {
+            var quick_res = {
+              name: swan_res.street,
+              address: swan_res.street,
+              latitude: swan_res.latitude,
+              longitude: swan_res.longitude,
+              coordType: quick_coordType
+            };
+            SUCCESS(quick_res);
+          }
+        });
+      } else {
+        swan.chooseLocation({
+          success: function success(swan_res) {
+            var quick_res = {
+              name: swan_res.name,
+              address: swan_res.address,
+              latitude: swan_res.latitude,
+              longitude: swan_res.longitude,
+              coordType: quick_coordType
+            };
+            SUCCESS(quick_res);
+          }
+        });
+      }
     }, quick_success, quick_fail, quick_complete);
   },
 
@@ -2041,28 +2059,31 @@ module.exports = {
     }
     var quick_callback = quick_object.callback;
     quick_object = null;
-    swan.onNetworkStatusChange(function (swan_res) {
-      var quick_res_type = void 0;
-      switch (swan_res.networkType) {
-        case 'unknown':
-          quick_res_type = 'others';
-          break;
-        default:
-          quick_res_type = swan_res.networkType;
-          break;
-      }
-      var quick_res = {
-        type: quick_res_type,
-        metered: false,
-        isConnected: swan_res.isConnected
-      };
-      quick_callback(quick_res);
-    });
+    getApp().onekit_NetworkStatusChange = true;
+    if (getApp().onekit_NetworkStatusChange) {
+      swan.onNetworkStatusChange(function (swan_res) {
+        var quick_res_type = void 0;
+        switch (swan_res.networkType) {
+          case 'unknown':
+            quick_res_type = 'others';
+            break;
+          default:
+            quick_res_type = swan_res.networkType;
+            break;
+        }
+        var quick_res = {
+          type: quick_res_type,
+          metered: false,
+          isConnected: swan_res.isConnected
+        };
+        quick_callback(quick_res);
+      });
+    }
   },
 
   // ///////
   unsubscribe: function unsubscribe() {
-    swan.offNetworkStatusChange();
+    getApp().onekit_NetworkStatusChange = false;
   },
 
   /** getSimOperator */
@@ -2231,7 +2252,7 @@ module.exports = {
     var quick_value = quick_object.value;
     quick_object = null;
     var swan_object = {
-      value: quick_value / 2.25,
+      value: quick_value / 255,
       success: quick_success,
       fail: quick_fail,
       complete: quick_complete
@@ -2255,7 +2276,7 @@ module.exports = {
       swan.getScreenBrightness({
         success: function success(swan_res) {
           var quick_res = {
-            value: swan_res.value * 2.25
+            value: swan_res.value * 255
           };
           SUCCESS(quick_res);
         }
@@ -3026,7 +3047,7 @@ module.exports = {
     getApp().onekit_src = src;
     var InnerAudioContext = swan.createInnerAudioContext();
     this.inneraudioContext = InnerAudioContext;
-    this.inneraudioContext.src = InnerAudioContext;
+    this.inneraudioContext.src = src;
   },
 
   set currentTime(currentTime) {
@@ -3207,6 +3228,51 @@ exports.default = Video;
 /***/ (function(module, exports) {
 
 module.exports = require("oneutil/PROMISE");
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _PROMISE = __webpack_require__(0);
+
+var _PROMISE2 = _interopRequireDefault(_PROMISE);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+module.exports = {
+  insert: function insert(quick_object) {
+    if (!quick_object) {
+      return;
+    }
+    var quick_title = quick_object.title;
+    var quick_startDate = quick_object.startDate;
+    var quick_endDate = quick_object.endDate;
+    var quick_remindMinutes = quick_object.remindMinutes || [10];
+    var quick_success = quick_object.success;
+    var quick_fail = quick_object.fail;
+    var quick_complete = quick_object.complete;
+    quick_object = null;
+    (0, _PROMISE2.default)(function (SUCCESS) {
+      swan.addEventOnCalendar({
+        title: quick_title,
+        startTime: quick_startDate,
+        endTime: quick_endDate,
+        remindMinutesBefore: quick_remindMinutes[0],
+        success: function success(swan_res) {
+          var quick_res = {
+            eventId: swan_res.eventId,
+            errMsg: 'addEventOnCalendar: ok'
+          };
+          SUCCESS(quick_res);
+        }
+      });
+    }, quick_success, quick_fail, quick_complete);
+  }
+}; /* eslint-disable no-console */
+/* eslint-disable camelcase */
 
 /***/ })
 /******/ ]);

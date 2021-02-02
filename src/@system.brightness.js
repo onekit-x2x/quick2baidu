@@ -16,7 +16,7 @@ module.exports = {
     const quick_value = quick_object.value
     quick_object = null
     const swan_object = {
-      value: quick_value / 2.25,
+      value: quick_value / 255,
       success: quick_success,
       fail: quick_fail,
       complete: quick_complete,
@@ -39,7 +39,7 @@ module.exports = {
       swan.getScreenBrightness({
         success: (swan_res) => {
           const quick_res = {
-            value: swan_res.value * 2.25
+            value: swan_res.value * 255
           }
           SUCCESS(quick_res)
         }

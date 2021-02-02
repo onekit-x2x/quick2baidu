@@ -67,7 +67,7 @@ module.exports = {
     getApp().onekit_src = src
     const InnerAudioContext = swan.createInnerAudioContext()
     this.inneraudioContext = InnerAudioContext
-    this.inneraudioContext.src = InnerAudioContext
+    this.inneraudioContext.src = src
   },
 
   set currentTime(currentTime) {
