@@ -32,6 +32,7 @@ module.exports = {
     // const quick_cancel = quick_object.cancel
     PROMISE((SUCCESS) => {
       swan.chooseVideo({
+        sourceType: ['album'],
         success: swan_res => {
           const quick_res = {
             uri: swan_res.tempFilePath,
@@ -102,6 +103,7 @@ module.exports = {
     // const quick_cancel = quick_object.cancel
     PROMISE((SUCCESS) => {
       swan.chooseVideo({
+        sourceType: ['camera'],
         success: swan_res => {
           const quick_res = {
             uri: swan_res.tempFilePath,
@@ -124,25 +126,18 @@ module.exports = {
     quick_object = null
     // const quick_cancel = quick_object.cancel
     PROMISE((SUCCESS) => {
-      swan.chooseMedia({
-        mediaType: ['video'],
+      swan.chooseVideo({
+        sourceType: ['album'],
         success: swan_res => {
-          const quick_files = swan_res.tempFiles.map(file => ({
-            uri: file.tempFilePath,
-            size: file.size,
-            duration: file.duration,
-            height: file.height,
-            width: file.width,
-            thumbTempFilePath: file.thumbTempFilePath,
-          }))
-          const quick_uris = []
-          for (const value of swan_res.tempFiles) {
-            quick_uris.push(value.tempFilePath)
-          }
           const quick_res = {
-            uris: quick_uris,
-            files: quick_files,
-            type: swan_res.type
+            uris: [swan_res.tempFilePath],
+            files: [{
+              size: swan_res.size,
+              uri: swan_res.tempFilePath
+            }],
+            duration: swan_res.duration,
+            height: swan_res.height,
+            width: swan_res.width,
           }
           SUCCESS(quick_res)
         }
@@ -202,7 +197,7 @@ module.exports = {
     const quick_fail = quick_object.fail
     const quick_complete = quick_object.complete
     const quick_uris = quick_object.uris
-    const quick_current = quick_object.current || 0
+    const quick_current = quick_object.current || quick_uris[0]
     // const quick_cancel = quick_object.cancel
     quick_object = null
     const swan_object = {

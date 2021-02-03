@@ -25,11 +25,11 @@ module.exports = {
       complete: quick_complete,
     }
     const recorderManager = swan.getRecorderManager()
+    this.recorderManager = recorderManager
     recorderManager.start(swan_object)
   },
   /** record.stop */
   stop() {
-    const recorderManager = swan.getRecorderManager()
-    recorderManager.start()
+    this.recorderManager.stop()
   }
 }

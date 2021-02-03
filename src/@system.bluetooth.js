@@ -4,95 +4,94 @@
 
 module.exports = {
   /* bluetooth.openAdapter */
-  openAdapter(quick_object) {
-    return swan.openBluetoothAdapter(quick_object)
+  openAdapter() {
+    return console.warn('openAdapter is not support')
   },
   /**
      bluetooth.closeAdapter({
     *
     */
 
-  closeAdapter(quick_object) {
-    return swan.closeBluetoothAdapter(quick_object)
+  closeAdapter() {
+    return console.warn('closeAdapter is not support')
   },
   /** bluetooth.getAdapterState */
 
-  getAdapterState(quick_object) {
-    return swan.getBluetoothAdapterState(quick_object)
+  getAdapterState() {
+    return console.warn('getAdapterState is not support')
   },
   /** bluetooth.onadapterstatechange 监听监听蓝牙适配器状态变化事件 */
 
-  set onadapterstatechange(callback) {
-    return swan.onBluetoothAdapterStateChange(callback)
+  onadapterstatechange() {
+    return console.warn('onadapterstatechange is not support')
   },
   /** bluetooth.startDevicesDiscovery */
 
-  startDevicesDiscovery(quick_object) {
-    return swan.startBluetoothDevicesDiscovery(quick_object)
+  startDevicesDiscovery() {
+    return console.warn('startDevicesDiscovery is not support')
   },
   /** bluetooth.stopDevicesDiscovery */
 
-  stopDevicesDiscovery(quick_object) {
-    return swan.stopBluetoothDevicesDiscovery(quick_object)
+  stopDevicesDiscovery() {
+    return console.warn('stopDevicesDiscovery is not support')
   },
   /** bluetooth.getDevices */
 
-  getDevices(quick_object) {
-    return swan.getBluetoothDevices(quick_object)
+  getDevices() {
+    return console.warn('getDevices is not support')
   },
   /** bluetooth.ondevicefound */
 
-  set ondevicefound(callback) {
-    return swan.onBluetoothDeviceFound(callback)
+  ondevicefound() {
+    return console.warn('ondevicefound is not support')
   },
   /** bluetooth.getConnectedDevices */
 
-  getConnectedDevices(quick_object) {
-    return swan.getConnectedBluetoothDevices(quick_object)
+  getConnectedDevices() {
+    return console.warn('getConnectedDevices is not support')
   },
   /** bluetooth.createBLEConnection */
 
-  createBLEConnection(quick_object) {
-    return swan.createBLEConnection(quick_object)
+  createBLEConnection() {
+    return console.warn('createBLEConnection is not support')
   },
   /** bluetooth.closeBLEConnection */
 
-  closeBLEConnection(quick_object) {
-    return swan.closeBLEConnection(quick_object)
+  closeBLEConnection() {
+    return console.warn('closeBLEConnection is not support')
   },
   /** bluetooth.getBLEDeviceServices */
-
-  getBLEDeviceServices(quick_object) {
-    return swan.getBLEDeviceServices(quick_object)
+  getBLEDeviceServices() {
+    return console.warn('getBLEDeviceServices is not support')
   },
   /** bluetooth.getBLEDeviceCharacteristics */
 
-  getBLEDeviceCharacteristics(quick_object) {
-    return swan.getBLEDeviceCharacteristics(quick_object)
+  getBLEDeviceCharacteristics() {
+    return console.warn('getBLEDeviceCharacteristics is not support')
   },
   /** bluetooth.readBLECharacteristicValue */
 
-  readBLECharacteristicValue(quick_object) {
-    return swan.readBLECharacteristicValue(quick_object)
+  readBLECharacteristicValue() {
+    return console.warn('readBLECharacteristicValue is not support')
   },
   /** bluetooth.writeBLECharacteristicValue */
 
-  writeBLECharacteristicValue(quick_object) {
-    return swan.writeBLECharacteristicValue(quick_object)
+  writeBLECharacteristicValue() {
+    return console.warn('writeBLECharacteristicValue is not support')
   },
   /** bluetooth.notifyBLECharacteristicValueChange */
 
-  notifyBLECharacteristicValueChange(quick_object) {
-    return swan.notifyBLECharacteristicValueChange(quick_object)
+  notifyBLECharacteristicValueChange() {
+    return console.warn('notifyBLECharacteristicValueChange is not support')
   },
   /** bluetooth.onblecharacteristicvaluechange */
 
-  set onblecharacteristicvaluechange(callback) {
-    return swan.onBLECharacteristicValueChange(callback)
+  onblecharacteristicvaluechange() {
+    return console.warn('onblecharacteristicvaluechange is not support')
   },
   /** bluetooth.onbleconnectionstatechange  */
 
-  set onbleconnectionstatechange(callback) {
-    return swan.onBLEConnectionStateChange(callback)
+  onbleconnectionstatechange() {
+    return console.warn('onbleconnectionstatechange is not support')
   }
 }

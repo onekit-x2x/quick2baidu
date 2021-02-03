@@ -21,21 +21,181 @@ const calendar      = quickapp2baidu["@system.calendar"]
 const network      = quickapp2baidu["@system.network"]
 const device      = quickapp2baidu["@system.device"]
 const brightness      = quickapp2baidu["@system.brightness"]
+const battery      = quickapp2baidu["@system.battery"]
+const record = quickapp2baidu["@system.record"]
+const image = quickapp2baidu["@system.image"]
+const Video  = quickapp2baidu["@hap.io.Video"]
+const audio  = quickapp2baidu["@system.audio"]
+
 
 
 global = {};
 Page({
     data: {},
     onLoad() {
-        brightness.setValue({
-            value: 255,
+
+        audio.src = 'https://b.bdstatic.com/miniapp/images/yanyuan.mp3'
+        audio.autoplay  = true
+        console.log(audio.autoplay)
+        audio.play()
+        setTimeout(() => {
+            audio.stop()
+        }, 5000);
+        audio.getPlayState({
             success: function(data) {
-              console.log(data)
+              console.log(data
+              )
             },
-            fail: function(data) {
-              console.log(data)
+            fail: function(data, code) {
+              console.log('handling fail, code=' + code)
             }
           })
+        //
+        // var mVideoTask = new Video({
+
+        //   })
+        //   mVideoTask.compressVideo({
+        //     success: function(data) {
+        //       console.log(
+        //         data
+
+        //       )
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+
+        //   media.pickImage({
+        //     success: function(data) {
+        //         image.compressImage({
+        //             uri: data.uri,
+        //             quality: 80,
+        //             ratio: 2, // 变为原图的1/2大小
+        //             format: 'JPEG',
+        //             success: function(data) {
+        //               console.log(data)
+        //             },
+        //             fail: function(data, code) {
+        //               console.log(`handling fail, code = ${code}`)
+        //             }
+        //           })
+        //       console.log(data)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+
+        // media.previewImage({
+        //     current: 0,
+        //     uris: [
+        //       'https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png'
+        //     ],
+        //     success: function(data) {
+        //       console.log('preview success',data)
+        //     },
+        //     fail: function(data) {
+        //       console.log(data)
+        //     }
+        //   })
+        // media.pickImage({
+        //     success: data => {
+        //       const imagePath = data.uri
+        //       if (imagePath && imagePath.length > 0) {
+        //         media.saveToPhotosAlbum({
+        //           uri: imagePath,
+        //           folderName: 'custom-folder',
+        //           success: function(data) {
+        //             console.log(data)
+        //           },
+        //           fail: function(data, code) {
+        //             console.log(`保存图片失败, 错误码：${code}`)
+        //           }
+        //         })
+        //       }
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`选择图片失败, 错误码：${code}`)
+        //     }
+        //   })
+        // media.pickFile({
+        //     success: function(data) {
+        //       console.log(data)
+        //     },
+        //     fail: function(data) {
+        //       console.log(data)
+        //     }
+        //   })
+        // media.pickVideos({
+        //     success: function(data) {
+        //       console.log(data)
+        //     },
+        //     fail: function(data) {
+        //       console.log(data)
+        //     }
+        //   })
+        // media.pickVideo({
+        //     success: function(data) {
+        //       console.log(data)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+        // media.pickImages({
+        //     success: function(data) {
+        //       console.log(data)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+
+        // media.takeVideo({
+        //     success: function(data) {
+        //       console.log(data)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+
+    //     const recorderManager = swan.getRecorderManager()
+    // recorderManager.start({})
+    // recorderManager.stop()
+        // record.start({
+        //     duration: 10000,
+        //     sampleRate: 8000,
+        //     numberOfChannels: 1,
+        //     encodeBitRate: 16000,
+        //     format: 'aac',
+        //     success: function(data) {
+        //       console.log(`handling success: ${data.uri}`)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+        //   record.stop()
+        // battery.getStatus({
+        //     success: function(data) {
+        //       console.log(`handling success: ${data.level}`)
+        //     },
+        //     fail: function(data, code) {
+        //       console.log(`handling fail, code = ${code}`)
+        //     }
+        //   })
+
+        // brightness.setValue({
+        //     value: 255,
+        //     success: function(data) {
+        //       console.log(data)
+        //     },
+        //     fail: function(data) {
+        //       console.log(data)
+        //     }
+        //   })
         //   brightness.getMode({
         //     success: function(data) {
         //       console.log(`handling success, mode = ${data.mode}`)

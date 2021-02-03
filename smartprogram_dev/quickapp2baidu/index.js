@@ -483,7 +483,7 @@ var _Video = __webpack_require__(64);
 
 var _Video2 = _interopRequireDefault(_Video);
 
-var _system51 = __webpack_require__(66);
+var _system51 = __webpack_require__(65);
 
 var _system52 = _interopRequireDefault(_system51);
 
@@ -2356,83 +2356,42 @@ module.exports = {
 "use strict";
 
 
-var _PROMISE = __webpack_require__(0);
-
-var _PROMISE2 = _interopRequireDefault(_PROMISE);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+/* eslint-disable consistent-return */
+/* eslint-disable no-console */
+/* eslint-disable camelcase */
+// import PROMISE from '../node_modules/oneutil/PROMISE'
 
 module.exports = {
   /** wifi.connect */
-  connect: function connect(quick_object) {
-    swan.startWifi();
-    return swan.connectWifi(quick_object);
+  connect: function connect() {
+    return console.warn('connect is not support');
   },
 
   /**
    * wifi.scan
    */
-  scan: function scan(quick_object) {
-    swan.startWifi();
-    return swan.getWifiList(quick_object);
+  scan: function scan() {
+    return console.warn('scan is not support');
   },
 
   /**
    * wifi.getConnectedWifi */
 
-  getConnectedWifi: function getConnectedWifi(quick_object) {
-    if (!quick_object) {
-      return;
-    }
-    swan.startWifi();
-    var quick_success = quick_object.success;
-    var quick_fail = quick_object.fail;
-    var quick_complete = quick_object.complete;
-    quick_object = null;
-    (0, _PROMISE2.default)(function (SUCCESS) {
-      swan.getConnectedWifi({
-        success: function success(swan_res) {
-          var quick_res = {
-            SSID: swan_res.wifi.SSID,
-            BSSID: swan_res.wifi.BSSID,
-            secure: swan_res.wifi.secure,
-            signalStrength: swan_res.wifi.signalStrength
-          };
-          SUCCESS(quick_res);
-        }
-      });
-    }, quick_success, quick_fail, quick_complete);
+  getConnectedWifi: function getConnectedWifi() {
+    return console.warn('getConnectedWifi is not support');
   },
 
   /**
    * wifi.onscanned */
-  set onscanned(callback) {
-    swan.startWifi();
-    return swan.onGetWifiList(callback);
+  onscanned: function onscanned() {
+    return console.warn('onscanned is not support');
   },
+
   /** wifi.onstatechanged */
-  set onstatechanged(callback) {
-    swan.startWifi();
-    swan.onWifiConnected(function (swan_res) {
-      var state = void 0;
-      if (swan_res.wifi.secure) {
-        state = 1;
-      } else {
-        state = 0;
-      }
-      var quick_res = {
-        state: state,
-        SSID: swan_res.wifi.SSID,
-        BSSID: swan_res.wifi.BSSID,
-        secure: swan_res.wifi.secure,
-        signalStrength: swan_res.wifi.signalStrength
-      };
-      callback(quick_res);
-    });
+  onstatechanged: function onstatechanged() {
+    return console.warn('onstatechanged is not support');
   }
-}; /* eslint-disable consistent-return */
-/* eslint-disable no-console */
-/* eslint-disable camelcase */
+};
 
 /***/ }),
 /* 58 */
@@ -2468,13 +2427,13 @@ module.exports = {
       complete: quick_complete
     };
     var recorderManager = swan.getRecorderManager();
+    this.recorderManager = recorderManager;
     recorderManager.start(swan_object);
   },
 
   /** record.stop */
   stop: function stop() {
-    var recorderManager = swan.getRecorderManager();
-    recorderManager.start();
+    this.recorderManager.stop();
   }
 };
 
@@ -2491,8 +2450,8 @@ module.exports = {
 
 module.exports = {
   /* bluetooth.openAdapter */
-  openAdapter: function openAdapter(quick_object) {
-    return swan.openBluetoothAdapter(quick_object);
+  openAdapter: function openAdapter() {
+    return console.warn('openAdapter is not support');
   },
 
   /**
@@ -2500,101 +2459,103 @@ module.exports = {
     *
     */
 
-  closeAdapter: function closeAdapter(quick_object) {
-    return swan.closeBluetoothAdapter(quick_object);
+  closeAdapter: function closeAdapter() {
+    return console.warn('closeAdapter is not support');
   },
 
   /** bluetooth.getAdapterState */
 
-  getAdapterState: function getAdapterState(quick_object) {
-    return swan.getBluetoothAdapterState(quick_object);
+  getAdapterState: function getAdapterState() {
+    return console.warn('getAdapterState is not support');
   },
 
   /** bluetooth.onadapterstatechange 监听监听蓝牙适配器状态变化事件 */
 
-  set onadapterstatechange(callback) {
-    return swan.onBluetoothAdapterStateChange(callback);
+  onadapterstatechange: function onadapterstatechange() {
+    return console.warn('onadapterstatechange is not support');
   },
+
   /** bluetooth.startDevicesDiscovery */
 
-  startDevicesDiscovery: function startDevicesDiscovery(quick_object) {
-    return swan.startBluetoothDevicesDiscovery(quick_object);
+  startDevicesDiscovery: function startDevicesDiscovery() {
+    return console.warn('startDevicesDiscovery is not support');
   },
 
   /** bluetooth.stopDevicesDiscovery */
 
-  stopDevicesDiscovery: function stopDevicesDiscovery(quick_object) {
-    return swan.stopBluetoothDevicesDiscovery(quick_object);
+  stopDevicesDiscovery: function stopDevicesDiscovery() {
+    return console.warn('stopDevicesDiscovery is not support');
   },
 
   /** bluetooth.getDevices */
 
-  getDevices: function getDevices(quick_object) {
-    return swan.getBluetoothDevices(quick_object);
+  getDevices: function getDevices() {
+    return console.warn('getDevices is not support');
   },
 
   /** bluetooth.ondevicefound */
 
-  set ondevicefound(callback) {
-    return swan.onBluetoothDeviceFound(callback);
+  ondevicefound: function ondevicefound() {
+    return console.warn('ondevicefound is not support');
   },
+
   /** bluetooth.getConnectedDevices */
 
-  getConnectedDevices: function getConnectedDevices(quick_object) {
-    return swan.getConnectedBluetoothDevices(quick_object);
+  getConnectedDevices: function getConnectedDevices() {
+    return console.warn('getConnectedDevices is not support');
   },
 
   /** bluetooth.createBLEConnection */
 
-  createBLEConnection: function createBLEConnection(quick_object) {
-    return swan.createBLEConnection(quick_object);
+  createBLEConnection: function createBLEConnection() {
+    return console.warn('createBLEConnection is not support');
   },
 
   /** bluetooth.closeBLEConnection */
 
-  closeBLEConnection: function closeBLEConnection(quick_object) {
-    return swan.closeBLEConnection(quick_object);
+  closeBLEConnection: function closeBLEConnection() {
+    return console.warn('closeBLEConnection is not support');
   },
 
   /** bluetooth.getBLEDeviceServices */
-
-  getBLEDeviceServices: function getBLEDeviceServices(quick_object) {
-    return swan.getBLEDeviceServices(quick_object);
+  getBLEDeviceServices: function getBLEDeviceServices() {
+    return console.warn('getBLEDeviceServices is not support');
   },
 
   /** bluetooth.getBLEDeviceCharacteristics */
 
-  getBLEDeviceCharacteristics: function getBLEDeviceCharacteristics(quick_object) {
-    return swan.getBLEDeviceCharacteristics(quick_object);
+  getBLEDeviceCharacteristics: function getBLEDeviceCharacteristics() {
+    return console.warn('getBLEDeviceCharacteristics is not support');
   },
 
   /** bluetooth.readBLECharacteristicValue */
 
-  readBLECharacteristicValue: function readBLECharacteristicValue(quick_object) {
-    return swan.readBLECharacteristicValue(quick_object);
+  readBLECharacteristicValue: function readBLECharacteristicValue() {
+    return console.warn('readBLECharacteristicValue is not support');
   },
 
   /** bluetooth.writeBLECharacteristicValue */
 
-  writeBLECharacteristicValue: function writeBLECharacteristicValue(quick_object) {
-    return swan.writeBLECharacteristicValue(quick_object);
+  writeBLECharacteristicValue: function writeBLECharacteristicValue() {
+    return console.warn('writeBLECharacteristicValue is not support');
   },
 
   /** bluetooth.notifyBLECharacteristicValueChange */
 
-  notifyBLECharacteristicValueChange: function notifyBLECharacteristicValueChange(quick_object) {
-    return swan.notifyBLECharacteristicValueChange(quick_object);
+  notifyBLECharacteristicValueChange: function notifyBLECharacteristicValueChange() {
+    return console.warn('notifyBLECharacteristicValueChange is not support');
   },
 
   /** bluetooth.onblecharacteristicvaluechange */
 
-  set onblecharacteristicvaluechange(callback) {
-    return swan.onBLECharacteristicValueChange(callback);
+  onblecharacteristicvaluechange: function onblecharacteristicvaluechange() {
+    return console.warn('onblecharacteristicvaluechange is not support');
   },
+
   /** bluetooth.onbleconnectionstatechange  */
 
-  set onbleconnectionstatechange(callback) {
-    return swan.onBLEConnectionStateChange(callback);
+  onbleconnectionstatechange: function onbleconnectionstatechange() {
+    return console.warn('onbleconnectionstatechange is not support');
   }
 };
 
@@ -2684,6 +2645,7 @@ module.exports = {
     // const quick_cancel = quick_object.cancel
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.chooseVideo({
+        sourceType: ['album'],
         success: function success(swan_res) {
           var quick_res = {
             uri: swan_res.tempFilePath,
@@ -2758,6 +2720,7 @@ module.exports = {
     // const quick_cancel = quick_object.cancel
     (0, _PROMISE2.default)(function (SUCCESS) {
       swan.chooseVideo({
+        sourceType: ['camera'],
         success: function success(swan_res) {
           var quick_res = {
             uri: swan_res.tempFilePath,
@@ -2781,40 +2744,18 @@ module.exports = {
     quick_object = null;
     // const quick_cancel = quick_object.cancel
     (0, _PROMISE2.default)(function (SUCCESS) {
-      swan.chooseMedia({
-        mediaType: ['video'],
+      swan.chooseVideo({
+        sourceType: ['album'],
         success: function success(swan_res) {
-          var quick_files = swan_res.tempFiles.map(function (file) {
-            return {
-              uri: file.tempFilePath,
-              size: file.size,
-              duration: file.duration,
-              height: file.height,
-              width: file.width,
-              thumbTempFilePath: file.thumbTempFilePath
-            };
-          });
-          var quick_uris = [];
-          for (var _iterator = swan_res.tempFiles, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
-            var _ref;
-
-            if (_isArray) {
-              if (_i >= _iterator.length) break;
-              _ref = _iterator[_i++];
-            } else {
-              _i = _iterator.next();
-              if (_i.done) break;
-              _ref = _i.value;
-            }
-
-            var value = _ref;
-
-            quick_uris.push(value.tempFilePath);
-          }
           var quick_res = {
-            uris: quick_uris,
-            files: quick_files,
-            type: swan_res.type
+            uris: [swan_res.tempFilePath],
+            files: [{
+              size: swan_res.size,
+              uri: swan_res.tempFilePath
+            }],
+            duration: swan_res.duration,
+            height: swan_res.height,
+            width: swan_res.width
           };
           SUCCESS(quick_res);
         }
@@ -2876,7 +2817,7 @@ module.exports = {
     var quick_fail = quick_object.fail;
     var quick_complete = quick_object.complete;
     var quick_uris = quick_object.uris;
-    var quick_current = quick_object.current || 0;
+    var quick_current = quick_object.current || quick_uris[0];
     // const quick_cancel = quick_object.cancel
     quick_object = null;
     var swan_object = {
@@ -3023,7 +2964,8 @@ module.exports = {
     getApp().onekit_play = 'stop';
     this.inneraudioContext.stop();
   },
-  getPlayState: function getPlayState() {
+  getPlayState: function getPlayState(quick_object) {
+    var quick_success = quick_object.success;
     var state = void 0;
     switch (getApp().onekit_play) {
       case 'play':
@@ -3039,7 +2981,7 @@ module.exports = {
     var quick_res = {
       state: state
     };
-    return quick_res;
+    quick_success(quick_res);
   },
 
 
@@ -3141,7 +3083,7 @@ module.exports = {
 
 exports.__esModule = true;
 
-var _PROMISE = __webpack_require__(65);
+var _PROMISE = __webpack_require__(0);
 
 var _PROMISE2 = _interopRequireDefault(_PROMISE);
 
@@ -3160,62 +3102,30 @@ var Video = function () {
   }
 
   Video.prototype.compressVideo = function compressVideo(quick_object) {
-    var quick_uri = this.object.uri;
-    var quick_bitrate = this.object.bitrate || 0.5;
-    var quick_framerate = this.object.framerate || 30;
     var quick_success = quick_object.success;
     var quick_fail = quick_object.fail;
     var quick_complete = quick_object.complete;
     quick_object = null;
     (0, _PROMISE2.default)(function (SUCCESS) {
-      swan.compressVideo({
-        src: quick_uri,
-        quality: 'medium',
-        bitrate: quick_bitrate,
-        fps: quick_framerate,
-        resolution: 0.5,
+      swan.chooseVideo({
+        sourceType: ['album'],
+        compressed: true,
         success: function success(swan_res) {
           var quick_res = {
             uri: swan_res.tempFilePath,
-            size: swan_res.size
+            size: swan_res.size,
+            duration: swan_res.duration,
+            height: swan_res.height,
+            width: swan_res.width
           };
           SUCCESS(quick_res);
-        },
-        fail: function fail(res) {
-          console.log(res);
         }
       });
     }, quick_success, quick_fail, quick_complete);
   };
 
-  Video.prototype.getVideoInfo = function getVideoInfo(quick_object) {
-    var quick_uri = quick_object.uri;
-    var quick_success = quick_object.success;
-    var quick_fail = quick_object.fail;
-    var quick_complete = quick_object.complete;
-    quick_object = null;
-    (0, _PROMISE2.default)(function (SUCCESS) {
-      swan.getVideoInfo({
-        src: quick_uri,
-        success: function success(swan_res) {
-          var quick_res = {
-            uri: quick_uri,
-            size: swan_res.size,
-            height: swan_res.height,
-            width: swan_res.width,
-            bitrate: swan_res.bitrate,
-            framerate: swan_res.fps,
-            orientation: swan_res.orientation,
-            type: swan_res.type,
-            duration: swan_res.duration
-          };
-          SUCCESS(quick_res);
-        },
-        fail: function fail(res) {
-          console.log(res);
-        }
-      });
-    }, quick_success, quick_fail, quick_complete);
+  Video.prototype.getVideoInfo = function getVideoInfo() {
+    return console.warn('getVideoInfo is not support');
   };
 
   return Video;
@@ -3225,12 +3135,6 @@ exports.default = Video;
 
 /***/ }),
 /* 65 */
-/***/ (function(module, exports) {
-
-module.exports = require("oneutil/PROMISE");
-
-/***/ }),
-/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
