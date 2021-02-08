@@ -75,7 +75,7 @@ module.exports = {
       })
     }, quick_success, quick_fail, quick_complete)
     getApp().onekit_DownloadTask = swan.downloadFile(swan_object)
-    getApp().onekit_url = quick_url
+    getApp().onekit_download_url = quick_url
   },
   /** onDownloadComplete */
 
@@ -89,7 +89,7 @@ module.exports = {
       DownloadTask.onProgressUpdate(swan_res => {
         if (swan_res.progress === '100') {
           quick_success({
-            uri: getApp().onekit_url
+            uri: getApp().onekit_download_url
           })
         }
       })
